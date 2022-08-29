@@ -1,0 +1,44 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base>
+  <main>
+	<div id="logo-container">
+	<img id="logo" src="/das_ding.png" />
+	<div id="logo-text">
+		<h1>Eludris</h1>
+		<h2>Get Good</h2>
+	</div>
+	</div>
+	</div>
+	A simple, FOSS, federated social media platform made in rust with E2EE.
+  </main>
+</Base>
+
+<style>
+  main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	color: #eeeeee;
+	gap: 3em;
+  }
+
+  #logo {
+	width: 17em;
+	height: 17em;
+	border-radius: 5%;
+  }
+
+  #logo-container {
+	display: flex;
+	flex-direction: row;
+  }
+
+  #logo-text {
+	padding: 2em;
+  }
+</style>
