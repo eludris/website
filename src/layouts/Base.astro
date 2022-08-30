@@ -26,7 +26,7 @@ const stars = fetch('https://api.github.com/repos/Eludris/elusite')
 	<meta name="title" content={title} />
 	<meta name="description" content={description} />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="." />
+	<meta property="og:url" content="/" />
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={description} />
     <meta property="og:image" content="/das_ding.png" />
@@ -55,18 +55,13 @@ const stars = fetch('https://api.github.com/repos/Eludris/elusite')
 </html>
 <style>
   :root {
-    --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
-    --font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);
-    --font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
-
     --color-text: hsl(12, 5%, 4%);
-    --color-bg: #0e1221;
+    --color-bg: #201530;
     --color-border: hsl(17, 24%, 90%);
   }
 
   html {
     font-family: system-ui, sans-serif;
-    font-size: var(--font-size-base);
     color: var(--color-text);
     background-color: var(--color-bg);
   }
@@ -86,12 +81,6 @@ const stars = fetch('https://api.github.com/repos/Eludris/elusite')
     background-color: #000000;
   }
 
-  footer > p > a > [astro-icon] {
-    width: var(--font-size-base);
-    position: relative;
-    top: 0.1em;
-  }
-
   #footer-links {
 	display: flex;
 	justify-content: space-evenly;
@@ -100,11 +89,11 @@ const stars = fetch('https://api.github.com/repos/Eludris/elusite')
   }
 
   :global(h1) {
-    font-size: var(--font-size-xl);
+	font-size: 4em;
   }
 
   :global(h2) {
-    font-size: var(--font-size-lg);
+	font-size: 2em;
   }
 
   :global(a) {

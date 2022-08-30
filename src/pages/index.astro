@@ -5,14 +5,13 @@ import Base from '../layouts/Base.astro';
 <Base>
   <main>
 	<div id="logo-container">
-	<img id="logo" src="/das_ding.png" />
-	<div id="logo-text">
-		<h1>Eludris</h1>
+	  <img id="logo" src="/das_ding.png" />
+	  <div id="logo-text">
+	    <h1>Eludris</h1>
 		<h2>Get Good</h2>
+	  </div>
 	</div>
-	</div>
-	</div>
-	A simple, FOSS, federated social media platform made in rust with E2EE.
+	<p>A simple, FOSS, federated social media platform made in rust with E2EE.</p>
   </main>
 </Base>
 
@@ -27,18 +26,41 @@ import Base from '../layouts/Base.astro';
 	gap: 3em;
   }
 
+  p {
+	text-align: center;
+	margin: 1em
+  }
+
   #logo {
 	width: 17em;
-	height: 17em;
 	border-radius: 5%;
   }
 
   #logo-container {
 	display: flex;
 	flex-direction: row;
+	align-items: center;
   }
 
   #logo-text {
-	padding: 2em;
+	padding: 0 2em;
+  }
+
+  @media only screen and (max-width: 600px) {
+	#logo {
+	  width: 14em;
+	}
+    #logo-container {
+	  flex-direction: column;
+	  padding: 0;
+	}
+	#logo-text {
+	  margin: 1em 0 0 0;
+	  text-align: center;
+	}
+    #logo-text > h1,h2 {
+	  margin: 0;
+	  padding: 0;
+	}
   }
 </style>
