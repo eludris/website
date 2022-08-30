@@ -44,21 +44,24 @@ import Base from '../layouts/Base.astro';
 
   #logo-text {
 	padding: 0 2em;
+	flex: 0 0 10;
   }
 
   @media only screen and (max-width: 600px) {
 	#logo {
-	  width: 14em;
+	  max-width: 80vw;
+	  min-width: 0;
 	}
     #logo-container {
 	  flex-direction: column;
 	  padding: 0;
 	}
 	#logo-text {
-	  margin: 1em 0 0 0;
+	  margin: 10px 0 0 0;
 	  text-align: center;
 	}
     #logo-text > h1,h2 {
+	  font-size: 25vw;
 	  margin: 0;
 	  padding: 0;
 	}
