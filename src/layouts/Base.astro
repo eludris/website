@@ -40,6 +40,10 @@ const stars = fetch('https://api.github.com/repos/Eludris/elusite')
     <meta name="theme-color" content={embed_colour} />
   </head>
   <body>
+    <nav>
+	  <a href="/">Eludris</a>
+	  <a href="/blog"><span>Blog</span></a>
+	</nav>
     <slot />
 	<footer>
 	<div id="footer-links">
@@ -70,6 +74,28 @@ const stars = fetch('https://api.github.com/repos/Eludris/elusite')
     margin: 0;
   }
 
+  nav {
+	display: flex;
+	background-color: #3e374a;
+	height: 3em;
+	padding: 0 1em;
+	align-items: stretch;
+  }
+
+  nav > a {
+	margin: 0;
+	color: black;
+	width: 7em;
+	text-align: center;
+	line-height: 3em;
+	transition: background-color ease-in-out 200ms;
+	color: #eeeeee;
+  }
+
+  nav > a:hover {
+	background-color: #2e243d;
+  }
+
   footer {
     padding: 0.5em 0.3em;
     display: flex;
@@ -77,8 +103,8 @@ const stars = fetch('https://api.github.com/repos/Eludris/elusite')
     justify-content: center;
 	text-align: center;
     gap: 0.5em;
-    color: #ffffff;
-    background-color: #000000;
+    color: #eeeeee;
+    background-color: #3e374a;
   }
 
   #footer-links {
@@ -98,6 +124,6 @@ const stars = fetch('https://api.github.com/repos/Eludris/elusite')
 
   :global(a) {
     text-decoration: none;
-    color: #aaeebb;
+    color: #ee9999;
   }
 </style>
