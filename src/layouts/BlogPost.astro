@@ -5,6 +5,7 @@ export interface Props {
 	content: {
 		title: string;
 		description: string;
+		author: string;
 		pubDate?: string;
 		updatedDate?: string;
 		heroImage?: string;
@@ -12,33 +13,48 @@ export interface Props {
 }
 
 const {
-	content: { title, description, pubDate, updatedDate, heroImage },
+	content: { title, description, author, pubDate, updatedDate, heroImage },
 } = Astro.props;
 ---
 
 <Base title={`Eludris Blog | ${title}`} description={description}>
 	<main>
 	  <article>
-		{heroImage && (<img width={720} height={360} src={heroImage} alt="hero image" />)}
-		<h1 class="title">{title}</h1>
-		{pubDate && <time>{pubDate}</time>}
-		{updatedDate && <div>Last updated on <time>{updatedDate}</time></div>}
+	  	<div id="head">
+			{heroImage && (<img width={720} height={360} src={heroImage} alt="hero image" />)}
+			<h1 class="title">{title}</h1>
+			<p>{description}</p>
+			{ (pubDate && author) && <hr> }
+			{pubDate && <span>Published on <time>{pubDate}</time></span>} { (pubDate && author) && <span>|</span> } { author && <span>{`Authored by ${author}`}</span> }
+			{updatedDate && <div>Last updated on <time>{updatedDate}</time></div>}
+		</head>
 		<slot />
 	  </article>
 	</main>
 </Base>
 
 <style>
-  h1 {
+  #head {
     text-align: center;
   }
 
   main {
-	margin: 0 auto;
+	margin: 5px auto;
 	padding: 1em;
 	max-width: 70em;
 	min-height: 100vh;
 	color: #eeeeee;
-	background-color: #555566;
+	background-color: #110022;
+	border-radius: 1%;
+  }
+
+  @media only screen and (max-width: 600px) {
+	main{
+	  margin: 5px;
+	}
+  }
+
+  :global(.astro-code) {
+	padding: 10px;
   }
 </style>
