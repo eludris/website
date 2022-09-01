@@ -34,7 +34,7 @@ and added simple ratelimiting for it and sketched up a new fully fledged microse
 driven restructure which you'll hopefully hear about next month.
 
 On other less nerdy news, thanks to the docker pr we @ooliver1 has gracefully hosted
-an Eludris instance over at <https://eludris.tooty.xyz> *(Thank's olivier)* which
+an Eludris instance over at <https://eludris.tooty.xyz> *(Thanks olivier)* which
 has led to a chain reaction of occurences, from the Eludris discord server suddenly
 growing, eluci.py, [pilfer](https://github.com/eludris/pilfer) (official TUI) and
 @teaishealthy's flutter client being made, [eludris.py](https://github.com/teaishealthy/eludris.py)
@@ -61,9 +61,9 @@ the gateway and caching leaving the handling for you to do in your preferred pro
 language with toolings to help you bring in your preferred Database of choice and
 presets is some langauges to help you get started."
 
-If you think that that sound amazing then you're absolutely correct!
+If you think that that sounds amazing then you're absolutely correct!
 
-This allows bot devs to make bot's in their preffered langauges without worrying
+This allows bot devs to make bots in their preferred langauges without worrying
 as much about performance, gateway or caching.
 
 It also allows the use of multiple languages for one bot and splitting every main
@@ -83,7 +83,7 @@ made using Astro.js.
 
 ## Conclusion
 
-That was a pretty eventfull 2 weeks for what was absolutely dead just a while ago.
+That was a pretty eventful 2 weeks for what was absolutely dead just a while ago.
 
 As anything Eludris related if you have any improvements or edits you can make
 to this website and blog make sure to make a pr and we will check it out.
