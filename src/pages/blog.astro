@@ -2,54 +2,54 @@
 import Base from "../layouts/Base.astro";
 
 const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
-	(a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
+    (a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
 );
 ---
 
 <Base title="Eludris | Blog Index" description="An index of all the Eludris blog posts.">
   <main>
-	<div id="head">
-	  <h1>The Eludris Blog Index</h1>
-	  <p>A place where you can find all our blogs whether they are about development updates, new plans or just plain shitposting.</p>
-	</div>
-	<hr>
-	<ul id="posts">
-	  { posts.map((post) => <li><time datetime={post.frontmatter.pubDate} style="color: #aaaaaa;">{new Date(post.frontmatter.pubDate).toLocaleDateString('en-uk', { year: 'numeric', month: 'short', day: 'numeric' })} </time> - <a href={post.url}>{post.frontmatter.title}</a></li> )}
-	</ul>
+    <div id="head">
+      <h1>The Eludris Blog Index</h1>
+      <p>A place where you can find all our blogs whether they are about development updates, new plans or just plain shitposting.</p>
+    </div>
+    <hr>
+    <ul id="posts">
+      { posts.map((post) => <li><time datetime={post.frontmatter.pubDate} style="color: #aaaaaa;">{new Date(post.frontmatter.pubDate).toLocaleDateString('en-uk', { year: 'numeric', month: 'short', day: 'numeric' })} </time> - <a href={post.url}>{post.frontmatter.title}</a></li> )}
+    </ul>
   </main>
 </Base>
 
 <style>
   #head {
     text-align: center;
-	margin: 10px;
+    margin: 10px;
   }
 
   #head > p {
-	font-size: 1.5em;
+    font-size: 1.5em;
   }
 
   #posts {
-	text-align: center;
-	font-size: 1.5em;
-	list-style-type: none;
-	margin: 10px;
-	padding: 10px;
+    text-align: center;
+    font-size: 1.5em;
+    list-style-type: none;
+    margin: 10px;
+    padding: 10px;
   }
 
   main {
-	margin: 5px auto;
-	padding: 1em;
-	max-width: 70em;
-	min-height: 100vh;
-	color: #eeeeee;
-	background-color: #110022;
-	border-radius: 1%;
+    margin: 5px auto;
+    padding: 1em;
+    max-width: 70em;
+    min-height: 100vh;
+    color: #eeeeee;
+    background-color: #110022;
+    border-radius: 1%;
   }
 
   @media only screen and (max-width: 1200px) {
-	main{
-	  margin: 5px;
-	}
+    main{
+      margin: 5px;
+    }
   }
 </style>

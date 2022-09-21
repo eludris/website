@@ -20,47 +20,51 @@ const stars = fetch('https://api.github.com/repos/Eludris/elusite')
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width,initial-scale=1" />
-	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-	<title>{title}</title>
-	<meta name="title" content={title} />
-	<meta name="description" content={description} />
-	<meta property="og:type" content="website" />
-	<meta property="og:url" content="/" />
-	<meta property="og:title" content={title} />
-	<meta property="og:description" content={description} />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="/" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
     <meta property="og:image" content="/das_ding.png" />
     <meta property="og:image:width" content="300" />
     <meta property="og:image:height" content="300" />
-	<meta property="twitter:card" content="summary_large_image" />
-	<meta property="twitter:url" content="." />
-	<meta property="twitter:title" content={title} />
-	<meta property="twitter:description" content={description} />
-	<meta property="twitter:image" content="/das_ding.png" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="." />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content="/das_ding.png" />
     <meta name="theme-color" content={embed_colour} />
   </head>
   <body>
     <nav>
-	  <a href="/">Eludris</a>
-	  <a href="/blog"><span>Blog</span></a>
-	</nav>
-	<br>
+      <a href="/">Eludris</a>
+      <a href="/blog"><span>Blog</span></a>
+    </nav>
+    <br>
     <slot />
-	<br>
-	<footer>
-	<div id="footer-links">
-		<a href="https://github.com/eludris">Github</a>
-		<span style="color: #777777">|</span>
-		<a href="https://discord.gg/vV6v2DhWQB">Discord</a>
-		<span style="color: #777777">|</span>
-		<a href="https://reddit.com/r/eludris">Reddit</a>
-	</div>
-	<span>&copy; {today.getFullYear()} Eludris. All rights reserved. <span style="color: #777777">|</span> This repository has <span style="color: #bbbb22">{stars} stars</span> on github.</span>
-	</footer>
+    <br>
+    <footer>
+    <div id="footer-links">
+        <a href="https://github.com/eludris">Github</a>
+        <span style="color: #777777">|</span>
+        <a href="https://discord.gg/vV6v2DhWQB">Discord</a>
+        <span style="color: #777777">|</span>
+        <a href="https://reddit.com/r/eludris">Reddit</a>
+    </div>
+    <span>&copy; {today.getFullYear()} Eludris. All rights reserved. <span style="color: #777777">|</span> This repository has <span style="color: #bbbb22">{stars} stars</span> on github.</span>
+    </footer>
   </body>
 </html>
 <style>
   :root {
+    --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+    --font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);
+    --font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+
     --color-text: hsl(12, 5%, 4%);
     --color-bg: #201530;
     --color-border: hsl(17, 24%, 90%);
@@ -70,6 +74,7 @@ const stars = fetch('https://api.github.com/repos/Eludris/elusite')
     font-family: system-ui, sans-serif;
     color: var(--color-text);
     background-color: var(--color-bg);
+    font-size: var(--font-size-base);
   }
 
   body {
@@ -77,25 +82,25 @@ const stars = fetch('https://api.github.com/repos/Eludris/elusite')
   }
 
   nav {
-	display: flex;
-	background-color: #3e374a;
-	height: 3em;
-	padding: 0 1em;
-	align-items: stretch;
+    display: flex;
+    background-color: #3e374a;
+    height: 3em;
+    padding: 0 1em;
+    align-items: stretch;
   }
 
   nav > a {
-	margin: 0;
-	color: black;
-	width: 7em;
-	text-align: center;
-	line-height: 3em;
-	transition: background-color ease-in-out 200ms;
-	color: #eeeeee;
+    margin: 0;
+    color: black;
+    width: 7em;
+    text-align: center;
+    line-height: 3em;
+    transition: background-color ease-in-out 200ms;
+    color: #eeeeee;
   }
 
   nav > a:hover {
-	background-color: #2e243d;
+    background-color: #2e243d;
   }
 
   footer {
@@ -103,29 +108,29 @@ const stars = fetch('https://api.github.com/repos/Eludris/elusite')
     display: flex;
     flex-direction: column;
     justify-content: center;
-	text-align: center;
+    text-align: center;
     gap: 0.5em;
     color: #eeeeee;
     background-color: #3e374a;
   }
 
   #footer-links {
-	display: flex;
-	justify-content: space-evenly;
-	flex-direction: row;
-	padding: 1em 4em;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    padding: 1em 4em;
   }
 
   :global(h1) {
-	font-size: 4em;
+    font-size: var(--font-size-xl);
   }
 
   :global(h2) {
-	font-size: 2em;
+    font-size: var(--font-size-lg);
   }
 
   :global(a) {
     text-decoration: none;
-    color: #ee9999;
+    color: #ee99ff;
   }
 </style>

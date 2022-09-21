@@ -2,61 +2,61 @@
 import Base from "./Base.astro";
 
 export interface Props {
-	content: {
-		title: string;
-		description: string;
-		author: string;
-		pubDate?: string;
-		updatedDate?: string;
-		heroImage?: string;
-	};
+    content: {
+        title: string;
+        description: string;
+        author: string;
+        pubDate?: string;
+        updatedDate?: string;
+        heroImage?: string;
+    };
 }
 
 const {
-	content: { title, description, author, pubDate, updatedDate, heroImage },
+    content: { title, description, author, pubDate, updatedDate, heroImage },
 } = Astro.props;
 ---
 
 <Base title={`Eludris Blog | ${title}`} description={description}>
-	<main>
-	  <article>
-	  	<div id="head">
-			{heroImage && (<img width={720} height={360} src={heroImage} alt="hero image" />)}
-			<h1 class="title">{title}</h1>
-			<p>{description}</p>
-			{ (pubDate && author) && <hr> }
-			{pubDate && <span>Published on <time>{pubDate}</time></span>} { (pubDate && author) && <span>|</span> } { author && <span>{`Authored by ${author}`}</span> }
-			{updatedDate && <div>Last updated on <time>{updatedDate}</time></div>}
-		</head>
-		<slot />
-	  </article>
-	</main>
+    <main>
+      <article>
+          <div id="head">
+            {heroImage && (<img width={720} height={360} src={heroImage} alt="hero image" />)}
+            <h1 class="title">{title}</h1>
+            <p>{description}</p>
+            { (pubDate && author) && <hr> }
+            {pubDate && <span>Published on <time>{pubDate}</time></span>} { (pubDate && author) && <span>|</span> } { author && <span>{`Authored by ${author}`}</span> }
+            {updatedDate && <div>Last updated on <time>{updatedDate}</time></div>}
+        </head>
+        <slot />
+      </article>
+    </main>
 </Base>
 
 <style>
   #head {
     text-align: center;
-	margin: 10px;
+    margin: 10px;
   }
 
   main {
-	margin: 5px auto;
-	padding: 1em;
-	max-width: 70em;
-	min-height: 100vh;
-	color: #eeeeee;
-	background-color: #110022;
-	border-radius: 1%;
-	font-size: 1.25rem;
+    margin: 5px auto;
+    padding: 1em;
+    max-width: 70em;
+    min-height: 100vh;
+    color: #eeeeee;
+    background-color: #110022;
+    border-radius: 1%;
+    font-size: 1.25rem;
   }
 
   @media only screen and (max-width: 1200px) {
-	main{
-	  margin: 5px;
-	}
+    main{
+      margin: 5px;
+    }
   }
 
   :global(.astro-code) {
-	padding: 10px;
+    padding: 10px;
   }
 </style>

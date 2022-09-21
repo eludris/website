@@ -4,72 +4,65 @@ import Base from '../layouts/Base.astro';
 
 <Base>
   <main>
-	<div id="logo-container">
-	  <img id="logo" src="/das_ding.png" alt="The Eludris logo, Das Ding."/>
-	  <div id="logo-text">
-	    <h1>Eludris</h1>
-		<h2>Get Good</h2>
-	  </div>
-	</div>
-	<p>A simple, FOSS, federated social media platform made in rust with E2EE.</p>
+    <div id="logo-container">
+      <img id="logo" src="/das_ding.png" alt="The Eludris logo, Das Ding."/>
+      <div id="logo-text">
+        <h1>Eludris</h1>
+        <h2>A platform that's <em>yours</em></h2>
+      </div>
+    </div>
+    <p>A simple, FOSS, federated social media platform made in rust with End-To-End-Encryption.</p>
   </main>
 </Base>
 
 <style>
   main {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-	color: #eeeeee;
-	gap: 3em;
-	font-size: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #eeeeee;
+    gap: 3em;
   }
 
   p {
-	text-align: center;
-	margin: 1em
+    text-align: center;
+    margin: 0 10px;
   }
 
   #logo {
-	width: 17em;
-	border-radius: 5%;
+    width: 17em;
+    border-radius: 5%;
   }
 
   #logo-container {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-  }
-
-  #logo-text {
-	padding: 0 2em;
-	flex: 0 0 10;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
   }
 
   @media only screen and (max-width: 600px) {
-	#logo {
-	  max-width: 80vw;
-	  min-width: 0;
-	}
+    #logo {
+        width: 12rem;
+    }
     #logo-container {
-	  flex-direction: column;
-	  padding: 0;
-	}
-	#logo-text {
-	  margin: 10px 0 0 0;
-	  text-align: center;
-	}
+      flex-direction: column;
+    }
+    #logo-text {
+      margin: 10px 0 0 0;
+      text-align: center;
+    }
     #logo-text > h1,h2 {
-	  margin: 0;
-	  padding: 0;
-	}
+      margin: 0;
+      padding: 0;
+    }
     #logo-text > h1 {
-      font-size: 25vw;
+      font-size: 3rem;
     }
     #logo-text > h2 {
-	  font-size: 15vw;
-	}
+      font-size: 1rem;
+    }
   }
 </style>
