@@ -96,8 +96,8 @@ import Base from "../layouts/Base.astro";
 
   #showcase > div {
     padding: 1em;
-    width: 40em;
-    height: 10em;
+    max-width: 40em;
+    min-height: 10em;
     background-color: #2d2639;
     margin: 0.25rem;
     border-radius: 10px;
@@ -116,7 +116,7 @@ import Base from "../layouts/Base.astro";
     margin: 0;
   }
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 1200px) {
     #logo {
       width: 12rem;
     }
