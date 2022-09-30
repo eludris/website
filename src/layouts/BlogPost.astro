@@ -2,35 +2,53 @@
 import Base from "./Base.astro";
 
 export interface Props {
-    content: {
-        title: string;
-        description: string;
-        author: string;
-        pubDate?: string;
-        updatedDate?: string;
-        heroImage?: string;
-    };
+  content: {
+    title: string;
+    description: string;
+    author: string;
+    pubDate?: string;
+    updatedDate?: string;
+    heroImage?: string;
+  };
 }
 
 const {
-    content: { title, description, author, pubDate, updatedDate, heroImage },
+  content: { title, description, author, pubDate, updatedDate, heroImage },
 } = Astro.props;
 ---
 
 <Base title={`Eludris Blog | ${title}`} description={description}>
-    <main>
-      <article>
-          <div id="head">
-            {heroImage && (<img width={720} height={360} src={heroImage} alt="hero image" />)}
-            <h1 class="title">{title}</h1>
-            <p>{description}</p>
-            { (pubDate && author) && <hr> }
-            {pubDate && <span>Published on <time>{pubDate}</time></span>} { (pubDate && author) && <span>|</span> } { author && <span>{`Authored by ${author}`}</span> }
-            {updatedDate && <div>Last updated on <time>{updatedDate}</time></div>}
-        </head>
-        <slot />
-      </article>
-    </main>
+  <main>
+    <article>
+      <div id="head">
+        {
+          heroImage && (
+            <img width={720} height={360} src={heroImage} alt="hero image" />
+          )
+        }
+        <h1 class="title">{title}</h1>
+        <p>{description}</p>
+        {pubDate && author && <hr />}
+        {
+          pubDate && (
+            <span>
+              Published on <time>{pubDate}</time>
+            </span>
+          )
+        }
+        {pubDate && author && <span>|</span>}
+        {author && <span>{`Authored by ${author}`}</span>}
+        {
+          updatedDate && (
+            <div>
+              Last updated on <time>{updatedDate}</time>
+            </div>
+          )
+        }
+      </div>
+      <slot />
+    </article>
+  </main>
 </Base>
 
 <style>
@@ -51,12 +69,13 @@ const {
   }
 
   @media only screen and (max-width: 1200px) {
-    main{
+    main {
       margin: 5px;
     }
   }
 
   :global(.astro-code) {
     padding: 10px;
+    border-radius: 4px;
   }
 </style>

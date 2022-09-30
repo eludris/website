@@ -20,13 +20,13 @@ SOTT?", and to your very valid question I'll say:
 
 It's quite simple really, SOTT (or State Of The Thing) is a blog which delves
 into what has happened with the Eludris community since the last SOTT, it is
-*supposed* to be released somewhere around the end of every month so stay tuned
+_supposed_ to be released somewhere around the end of every month so stay tuned
 for it I suppose, I can assure you you will not regret it ~~probably~~.
 
 ## Eludris
 
 After a several month long stallmate with the GitHub commit counter being stuck
-at 69 *noice* commits and us eventually giving up on a glitch in the matrix changing
+at 69 _noice_ commits and us eventually giving up on a glitch in the matrix changing
 it, we've finally started working on Eludris again!
 
 Over the last half a month-ish we have made Eludris dockerised, improved the gateway
@@ -34,7 +34,7 @@ and added simple ratelimiting for it and sketched up a new fully fledged microse
 driven restructure which you'll hopefully hear about next month.
 
 On other less nerdy news, thanks to the docker pr we @ooliver1 has gracefully hosted
-an Eludris instance over at <https://eludris.tooty.xyz> *(Thanks olivier)* which
+an Eludris instance over at <https://eludris.tooty.xyz> _(Thanks olivier)_ which
 has led to a chain reaction of occurences, from the Eludris discord server suddenly
 growing, eluci.py, [pilfer](https://github.com/eludris/pilfer) (official TUI) and
 @teaishealthy's flutter client being made, [eludris.py](https://github.com/teaishealthy/eludris.py)
@@ -44,7 +44,7 @@ and an unprecedented amount of shitposting, shenanigans and DOSing occuring.
 
 If you didn't notice, this means that you can use Eludris **right now**, just
 install [pilfer](https://github.com/eludris/pilfer) and you'll be set, what are
-you waiting for? go do it *now*.
+you waiting for? go do it _now_.
 
 Now that you've sent your very first Eludris messages, let's see what also happened
 this month.
@@ -56,10 +56,10 @@ Eludris has also stared working on a new project, [Cognite](https://github.com/e
 Here's a summary of what it is from the README.md file:
 
 > "🚀 A simple blazingly fast language agnostic microservice driven Discord
-bot framework made in rust that leverages Apache Kafka and KeyDB to take care of
-the gateway and caching leaving the handling for you to do in your preferred programming
-language with toolings to help you bring in your preferred Database of choice and
-presets is some langauges to help you get started."
+> bot framework made in rust that leverages Apache Kafka and KeyDB to take care of
+> the gateway and caching leaving the handling for you to do in your preferred programming
+> language with toolings to help you bring in your preferred Database of choice and
+> presets is some langauges to help you get started."
 
 If you think that that sounds amazing then you're absolutely correct!
 
@@ -77,9 +77,9 @@ making bots with Cognite even more!
 Among ~~us~~ the plethora of other stuff that happened this month we also got:
 
 - [awesome-eludris](https://github.com/awesome-eludris): A repository where you
-can share all your Eludris related creations.
+  can share all your Eludris related creations.
 - [elusite](https://github.com/eludris/elusite): The website you're on right now,
-made using Astro.js.
+  made using Astro.js.
 
 ## Conclusion
 

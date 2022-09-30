@@ -1,20 +1,43 @@
 ---
 import Base from "../layouts/Base.astro";
 
-const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
-    (a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
+const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
+  (a, b) =>
+    new Date(b.frontmatter.pubDate).valueOf() -
+    new Date(a.frontmatter.pubDate).valueOf()
 );
 ---
 
-<Base title="Eludris | Blog Index" description="An index of all the Eludris blog posts.">
+<Base
+  title="Eludris | Blog Index"
+  description="An index of all the Eludris blog posts."
+>
   <main>
     <div id="head">
       <h1>The Eludris Blog Index</h1>
-      <p>A place where you can find all our blogs whether they are about development updates, new plans or just plain shitposting.</p>
+      <p>
+        A place where you can find all our blogs whether they are about
+        development updates, new plans or just plain shitposting.
+      </p>
     </div>
-    <hr>
+    <hr />
     <ul id="posts">
-      { posts.map((post) => <li><time datetime={post.frontmatter.pubDate} style="color: #aaaaaa;">{new Date(post.frontmatter.pubDate).toLocaleDateString('en-uk', { year: 'numeric', month: 'short', day: 'numeric' })} </time> - <a href={post.url}>{post.frontmatter.title}</a></li> )}
+      {
+        posts.map((post) => (
+          <li>
+            <time datetime={post.frontmatter.pubDate} style="color: #aaaaaa;">
+              {new Date(post.frontmatter.pubDate).toLocaleDateString("en-uk", {
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+              })}{" "}
+            </time>{" "}
+            - <a href={post.url}>{post.frontmatter.title}</a>
+            <br />
+            <p class="post-description">{post.frontmatter.description}</p>
+          </li>
+        ))
+      }
     </ul>
   </main>
 </Base>
@@ -47,8 +70,13 @@ const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
     border-radius: 1%;
   }
 
+  .post-description {
+    color: #aaaaaa;
+    font-size: 0.8em;
+  }
+
   @media only screen and (max-width: 1200px) {
-    main{
+    main {
       margin: 5px;
     }
   }
