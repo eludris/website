@@ -1,5 +1,6 @@
 ---
 import { SITE_TITLE, SITE_DESCRIPTION, EMBED_COLOUR } from "../config.js";
+import { Icon } from "astro-icon";
 
 export interface Props {
   title?: string;
@@ -45,112 +46,136 @@ const stars = fetch("https://api.github.com/repos/Eludris/elusite")
   </head>
   <body>
     <nav>
-      <a href="/">
+      <a href="/" id="nav-logo">
         <img src="das_ding.png" alt="eludris" />
-        </a
-      >
-      <a href="/blog"><span>Blog</span></a>
+      </a>
+      <a href="/blog" class="nav-link"><span>Blog</span></a>
+      <a href="https://github.com/eludris" class="nav-link"
+        ><span>GitHub</span>
+      </a>
     </nav>
     <br />
     <slot />
     <br />
     <footer>
-      <div id="footer-links">
-        <a href="https://github.com/eludris">Github</a>
-        <span style="color: #777777">|</span>
-        <a href="https://discord.gg/vV6v2DhWQB">Discord</a>
-        <span style="color: #777777">|</span>
-        <a href="https://reddit.com/r/eludris">Reddit</a>
-      </div>
       <span
         >&copy; {today.getFullYear()} Eludris. All rights reserved. <span
           style="color: #777777">|</span
         > This repository has <span style="color: #bbbb22">{stars} stars</span> on
         github.</span
       >
+      <div id="footer-links">
+        <a href="https://github.com/eludris"
+          ><Icon name="akar-icons:github-fill" color="black" />
+        </a>
+        <span style="color: #777777">|</span>
+        <a href="https://discord.gg/vV6v2DhWQB"
+          ><Icon name="logos:discord-icon" />
+        </a>
+        <span style="color: #777777">|</span>
+        <a href="https://reddit.com/r/eludris"
+          ><Icon name="logos:reddit-icon" />
+        </a>
+      </div>
     </footer>
+    <style>
+      :root {
+        --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+        --font-size-lg: clamp(1.2rem, 0.8vw + 1.2rem, 1.5rem);
+        --font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+
+        --color-text: hsl(12, 5%, 4%);
+        --color-bg: #201530;
+        --color-border: hsl(17, 24%, 90%);
+      }
+
+      html {
+        font-family: system-ui, sans-serif;
+        color: var(--color-text);
+        background-color: var(--color-bg);
+        font-size: calc(var(--font-size-base) + 1px);
+      }
+
+      body {
+        margin: 0;
+      }
+
+      nav {
+        display: flex;
+        flex-direction: row;
+        background-color: #3e374a;
+        height: 2em;
+        padding: 0 1em;
+        align-items: stretch;
+      }
+
+      .nav-link {
+        margin: 0;
+        color: black;
+        width: 7em;
+        text-align: center;
+        line-height: 2em;
+        transition: background-color ease-in-out 125ms;
+        color: #ee77ff;
+      }
+
+      .nav-link:hover {
+        background-color: #2e243d;
+      }
+
+      #nav-logo {
+        margin-right: auto;
+      }
+
+      #nav-logo > img {
+        border-radius: 10px;
+        width: 1.5rem;
+        height: 1.5rem;
+        position: relative;
+        top: 0.25rem;
+        cursor: pointer;
+      }
+
+      footer {
+        padding: 2em 0.5em 0.3em 0.3em;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        text-align: center;
+        color: #eeeeee;
+        background-color: #3e374a;
+      }
+
+      #footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 1em;
+        flex-direction: row;
+      }
+
+      #footer-links > a > [astro-icon] {
+        width: 2em;
+        position: relative;
+        bottom: 0.2em;
+      }
+
+      #footer-links > a > [astro-icon="logos:discord-icon"] {
+        position: relative;
+        top: 0em;
+      }
+
+      :global(h1) {
+        font-size: var(--font-size-xl);
+      }
+
+      :global(h2) {
+        font-size: var(--font-size-lg);
+      }
+
+      :global(a) {
+        text-decoration: none;
+        color: #ee99ff;
+      }
+    </style>
   </body>
 </html>
-<style>
-  :root {
-    --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
-    --font-size-lg: clamp(1.2rem, 0.8vw + 1.2rem, 1.5rem);
-    --font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
-
-    --color-text: hsl(12, 5%, 4%);
-    --color-bg: #201530;
-    --color-border: hsl(17, 24%, 90%);
-  }
-
-  html {
-    font-family: system-ui, sans-serif;
-    color: var(--color-text);
-    background-color: var(--color-bg);
-    font-size: calc(var(--font-size-base) + 2px);
-  }
-
-  body {
-    margin: 0;
-  }
-
-  nav {
-    display: flex;
-    background-color: #3e374a;
-    height: 3em;
-    padding: 0 1em;
-    align-items: stretch;
-  }
-
-  nav > a {
-    margin: 0;
-    color: black;
-    width: 7em;
-    text-align: center;
-    line-height: 3em;
-    transition: background-color ease-in-out 200ms;
-    color: #ee77ff;
-  }
-
-  nav > a:hover {
-    background-color: #2e243d;
-  }
-
-  nav > a > img {
-    border-radius: 10px;
-    width: 2.5rem;
-    height: 2.5rem;
-    position: relative;
-    top: 0.25rem;
-  }
-
-  footer {
-    padding: 0.5em 0.3em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    gap: 0.5em;
-    color: #eeeeee;
-    background-color: #3e374a;
-  }
-
-  #footer-links {
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: row;
-    padding: 1em 4em;
-  }
-
-  :global(h1) {
-    font-size: var(--font-size-xl);
-  }
-
-  :global(h2) {
-    font-size: var(--font-size-lg);
-  }
-
-  :global(a) {
-    text-decoration: none;
-    color: #ee99ff;
-  }
-</style>
