@@ -60,17 +60,19 @@ const {
   main {
     margin: 5px auto;
     padding: 1em;
-    max-width: 70em;
+    width: 70vw;
     min-height: 100vh;
     color: #eeeeee;
-    background-color: #110022;
-    border-radius: 1%;
-    font-size: 1.25rem;
   }
 
   @media only screen and (max-width: 1200px) {
+    #head {
+      margin: 0;
+    }
     main {
-      margin: 5px;
+      margin: 5px auto;
+      padding: 10px;
+      width: calc(100vw - 20px);
     }
   }
 
