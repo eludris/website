@@ -1,5 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
+import { Icon } from 'astro-icon';
 ---
 
 <Base>
@@ -17,7 +18,7 @@ import Base from "../layouts/Base.astro";
     </p>
     <div id="showcase">
       <div>
-        <h3>Fully free and open source, forever</h3>
+        <h3><Icon name="twemoji:dollar-banknote" /> Fully free and open source, forever</h3>
         <p class="showcase-p">
           <!-- Now before you complain about the whackass way some of the tags are formatted, don't balame me, blame prettier -->
           At Eludris&#8482; we really like our software FOSS <strike
@@ -27,7 +28,7 @@ import Base from "../layouts/Base.astro";
         </p>
       </div>
       <div>
-        <h3>Lightweight and federated</h3>
+        <h3><Icon name="twemoji:feather" /> Lightweight and federated</h3>
         <p class="showcase-p">
           Eludris is federated by nature, which means that anyone can host their
           own instance anywhere and it will communicate with the other instances
@@ -36,7 +37,7 @@ import Base from "../layouts/Base.astro";
         </p>
       </div>
       <div>
-        <h3>Secure</h3>
+        <h3><Icon name="twemoji:locked" /> Secure</h3>
         <p class="showcase-p">
           Eludris really cares about your privacy which is it provide federation
           <em>and</em> and End-To-End-Encryption so your mind can be at peace no
@@ -45,7 +46,7 @@ import Base from "../layouts/Base.astro";
         </p>
       </div>
       <div>
-        <h3>A platform that's <em>truly <b>yours</b></em></h3>
+        <h3><Icon name="twemoji:paintbrush" /> A platform that's <em>truly <b>yours</b></em></h3>
         <p class="showcase-p">
           Eludris strives to be as configurable as it can which is why not only
           can you configure everything about your instance from a single <code
@@ -99,12 +100,18 @@ import Base from "../layouts/Base.astro";
     max-width: 40em;
     min-height: 10em;
     background-color: #2d2639;
-    margin: 0.25rem;
+    margin: 5px;
     border-radius: 10px;
   }
 
+  #showcase > div > h3 > [astro-icon] {
+    width: 1.5em;
+    position: relative;
+    top: 0.25em;
+  }
+
   .showcase-p {
-    margin-top: 0.5rem;
+    margin-top: 15px;
   }
 
   code {
@@ -120,28 +127,35 @@ import Base from "../layouts/Base.astro";
     #logo {
       width: 12rem;
     }
+
     #logo-container {
       flex-direction: column;
     }
+
     #logo-text {
       margin: 10px 0 0 0;
       text-align: center;
     }
+
     #logo-text > h1,
     h2 {
       margin: 0;
       padding: 0;
     }
+
     #logo-text > h1 {
       font-size: 3rem;
     }
+
     #logo-text > h2 {
       font-size: 1rem;
     }
+
     #showcase {
       display: flex;
       flex-direction: column;
     }
+
     #showcase > div {
       width: 85vw;
       height: auto;

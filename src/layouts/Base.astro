@@ -47,16 +47,14 @@ const stars = fetch("https://api.github.com/repos/Eludris/elusite")
   <body>
     <nav>
       <a href="/" id="nav-logo">
-        <img src="das_ding.png" alt="eludris" />
+        <img src="/das_ding.png" alt="eludris" />
       </a>
       <a href="/blog" class="nav-link"><span>Blog</span></a>
       <a href="https://github.com/eludris" class="nav-link"
         ><span>GitHub</span>
       </a>
     </nav>
-    <br />
     <slot />
-    <br />
     <footer>
       <span
         >&copy; {today.getFullYear()} Eludris. All rights reserved. <span
@@ -137,13 +135,14 @@ const stars = fetch("https://api.github.com/repos/Eludris/elusite")
       }
 
       footer {
-        padding: 2em 0.5em 0.3em 0.3em;
+        padding: 0.5em 0em 0.3em 0.3em;
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
         text-align: center;
         color: #eeeeee;
         background-color: #3e374a;
+        align-items: center;
       }
 
       #footer-links {
@@ -151,17 +150,13 @@ const stars = fetch("https://api.github.com/repos/Eludris/elusite")
         justify-content: center;
         gap: 1em;
         flex-direction: row;
+        align-items: center;
       }
 
       #footer-links > a > [astro-icon] {
         width: 2em;
         position: relative;
-        bottom: 0.2em;
-      }
-
-      #footer-links > a > [astro-icon="logos:discord-icon"] {
-        position: relative;
-        top: 0em;
+        top: 0.2em;
       }
 
       :global(h1) {
@@ -175,6 +170,18 @@ const stars = fetch("https://api.github.com/repos/Eludris/elusite")
       :global(a) {
         text-decoration: none;
         color: #ee99ff;
+      }
+
+      @media only screen and (max-width: 1200px) {
+        footer {
+          flex-direction: column;
+        }
+        #footer-links {
+          order: -1;
+        }
+        nav {
+          margin-bottom: 5px;
+        }
       }
     </style>
   </body>
