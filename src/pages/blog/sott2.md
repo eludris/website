@@ -4,7 +4,7 @@ title: "State Of The Thing #2"
 description: "The second entry in the series of monthly Eludris news & updates."
 author: "EnokiUN"
 pubDate: "November 2 2022"
-draft: true
+draft: false
 ---
 
 ## Main Things
