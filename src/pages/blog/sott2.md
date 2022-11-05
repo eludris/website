@@ -25,7 +25,7 @@ procrastinate the entire month and it was totally some very serious real
 business decision that I won't delve into deeper detail about here, just
 know that it 100% was not any form of procrastination.
 
-And yes, this release of SOTT will cover the events that ocurred over the last
+And yes, this release of SOTT will cover the events that occurred over the last
 two months, so strap your belts because this one is going to hopefully be a
 good one.
 
@@ -33,7 +33,7 @@ good one.
 
 #### Instances
 
-First things off, our friend @teaishealthy has started hosting their own Eludris
+First off, our friend @teaishealthy has started hosting their own Eludris
 instance over at <https://eludris.teaishealthy.me> so do consider checking that
 instance out.
 
@@ -104,7 +104,7 @@ a more detailed rundown of them one at a time:
 
 - Thang: Currently WIP, exists mostly as the Discord bot that bridges
   <span class="code">`h`</span> with [eludis](https://discord.gg/vV6v2DhWQB)
-  (the official Eludris discord server), used to test pydris sometimes, the first
+  (the official Eludris Discord server), used to test pydris sometimes, the first
   Eludris bot.
 - Erik: The second Eludris bot which takes a lot from our beloved Rik, focuses
   on fun with a side of utility.
@@ -126,14 +126,14 @@ any work done on it, here are some of the main highlights:
   lightweight, is less of a pain to maintain and generally fits with the Eludris
   vision better.
 - eludris/eludris development now happens on the next branch.
-- Added proper ratelimiting for Oprish and Pademonium.
+- Added proper ratelimiting for Oprish and Pandemonium.
 - Added a proof-of-concept file server to Effis which is currently deployed
   on both instances.
 - Added new limits and validation to some REST API request fields.
 - Removed instance features and added descriptions.
 - Made Most of the stuff configurable from within an <span class="code">`Eludris.toml`</span>
   file.
-- Fixed some issues with ratelimits breaking on CloudFare or when using Nginx.
+- Fixed some issues with ratelimits breaking on CloudFlare or when using Nginx.
 - Make CORS work.
 
 Hopefully we will have a longer list next month, **_hopefully_**.
