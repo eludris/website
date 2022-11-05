@@ -4,6 +4,7 @@ title: "State Of The Thing #1"
 description: "The first entry in the series of monthly Eludris news & updates."
 author: "EnokiUN"
 pubDate: "August 31 2022"
+draft: false
 ---
 
 ## Main Things
@@ -25,22 +26,22 @@ for it I suppose, I can assure you you will not regret it ~~probably~~.
 
 ## Eludris
 
-After a several month long stallmate with the GitHub commit counter being stuck
+After a several month long stalemate with the GitHub commit counter being stuck
 at 69 _noice_ commits and us eventually giving up on a glitch in the matrix changing
 it, we've finally started working on Eludris again!
 
-Over the last half a month-ish we have made Eludris dockerised, improved the gateway
+Over the last half a month-ish we have made Eludris dockerize, improved the gateway
 and added simple ratelimiting for it and sketched up a new fully fledged microservice
 driven restructure which you'll hopefully hear about next month.
 
 On other less nerdy news, thanks to the docker pr we @ooliver1 has gracefully hosted
 an Eludris instance over at <https://eludris.tooty.xyz> _(Thanks olivier)_ which
-has led to a chain reaction of occurences, from the Eludris discord server suddenly
+has led to a chain reaction of occurrences, from the Eludris discord server suddenly
 growing, eluci.py, [pilfer](https://github.com/eludris/pilfer) (official TUI) and
 @teaishealthy's flutter client being made, [eludris.py](https://github.com/teaishealthy/eludris.py)
 and [pydris](https://github.com/enokiun/pydris) getting created, @ooliver1 adding
 a Discord <--> Eludris bridge to [Thang](https://github.com/eludris/thang-discord)
-and an unprecedented amount of shitposting, shenanigans and DOSing occuring.
+and an unprecedented amount of shitposting, shenanigans and DOSing occurring.
 
 If you didn't notice, this means that you can use Eludris **right now**, just
 install [pilfer](https://github.com/eludris/pilfer) and you'll be set, what are
@@ -59,11 +60,11 @@ Here's a summary of what it is from the README.md file:
 > bot framework made in rust that leverages Apache Kafka and KeyDB to take care of
 > the gateway and caching leaving the handling for you to do in your preferred programming
 > language with toolings to help you bring in your preferred Database of choice and
-> presets is some langauges to help you get started."
+> presets is some languages to help you get started."
 
 If you think that that sounds amazing then you're absolutely correct!
 
-This allows bot devs to make bots in their preferred langauges without worrying
+This allows bot developers to make bots in their preferred languages without worrying
 as much about performance, gateway or caching.
 
 It also allows the use of multiple languages for one bot and splitting every main
