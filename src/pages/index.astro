@@ -9,7 +9,7 @@ import { Icon } from "astro-icon";
       <img id="logo" src="/das_ding.png" alt="The Eludris logo, Das Ding." />
       <div id="logo-text">
         <h1>Eludris</h1>
-        <h2>A platform that's <em>yours</em></h2>
+        <h2>A platform that's <em style="color: #aa77dd">yours</em></h2>
       </div>
     </div>
     <p class="desc">
@@ -73,7 +73,7 @@ import { Icon } from "astro-icon";
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: calc(100vh - calc(2em + 20px));
     color: #eeeeee;
     gap: 1.5em;
   }
