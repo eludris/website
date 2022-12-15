@@ -40,13 +40,14 @@ As a quick summary however:
 
 1. Bunch of `.env` variable name changes.
 2. `Eludris.toml` is now a thing.
-3. Pandemonium changed to use OPCode payloads including `PING`s
+3. Pandemonium changed to use OPCode payloads including `PING`s.
 4. Effis was remade from the ground up.
 5. More ratelimits.
+6. Changed pandemonium expected ping interval duration.
 
 ### Eludris Community
 
-This month and thanks to wanting to give more "official" support to 3rd party library and client creator while not wanting to
+This month, and thanks to wanting to give more "official" support to 3rd party library and client creator while not wanting to
 clutter the official organization, we've decided to create a new organization called
 [Eludris Community](https://github.com/eludris-community), here you can add your API wrappers, clients, toolings and so on and
 be truly a part of the Eludris community, [awesome](https://github.com/eludris/awesome) still exists and will keep accepting
