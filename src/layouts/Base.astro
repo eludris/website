@@ -83,8 +83,8 @@ const stars = fetch("https://api.github.com/repos/Eludris/elusite")
         --font-size-lg: clamp(1.2rem, 0.8vw + 1.2rem, 1.5rem);
         --font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
 
-        --color-text: hsl(12, 5%, 4%);
-        --color-bg: #201530;
+        --color-text: #eeeeee;
+        --color-bg: #211233;
         --color-border: hsl(17, 24%, 90%);
       }
 
@@ -102,7 +102,6 @@ const stars = fetch("https://api.github.com/repos/Eludris/elusite")
       nav {
         display: flex;
         flex-direction: row;
-        background-color: #3e374a;
         height: 2em;
         padding: 0 1em;
         align-items: stretch;
@@ -115,16 +114,18 @@ const stars = fetch("https://api.github.com/repos/Eludris/elusite")
         width: 7em;
         text-align: center;
         line-height: 2em;
-        transition: background-color ease-in-out 125ms;
-        color: #ee77ff;
+        transition: background-color ease-in-out 200ms, border-width ease-in-out 100ms;
+        color: #eeeeee;
+        border-width: 0px;
       }
 
       .nav-link:hover {
-        background-color: #2e243d;
+        background-color: #332143;
       }
 
       #nav-logo {
         margin-right: auto;
+        border-width: 0px;
       }
 
       #nav-logo > img {
@@ -155,6 +156,10 @@ const stars = fetch("https://api.github.com/repos/Eludris/elusite")
         align-items: center;
       }
 
+      #footer-links > a {
+        border-width: 0px;
+      }
+
       #footer-links > a > [astro-icon] {
         width: 2em;
         position: relative;
@@ -171,7 +176,12 @@ const stars = fetch("https://api.github.com/repos/Eludris/elusite")
 
       :global(a) {
         text-decoration: none;
-        color: #ee99ff;
+        color: #7865aa;
+        border-bottom: 2px solid #332143;
+      }
+
+      :global(a:hover) {
+        border-bottom: 2px solid #553284;
       }
 
       @media only screen and (max-width: 1200px) {

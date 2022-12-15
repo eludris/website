@@ -5,17 +5,20 @@ import { Icon } from "astro-icon";
 
 <Base>
   <main>
-    <div id="logo-container">
-      <img id="logo" src="/das_ding.png" alt="The Eludris logo, Das Ding." />
-      <div id="logo-text">
-        <h1>Eludris</h1>
-        <h2>A platform that's <em style="color: #aa77dd">yours</em></h2>
+    <div id="first">
+      <div id="logo-container">
+        <img id="logo" src="/das_ding.png" alt="The Eludris logo, Das Ding." />
+        <div id="logo-text">
+          <h1>Eludris</h1>
+          <h2>A platform that's <em style="color: #aa77dd">yours</em></h2>
+        </div>
       </div>
+      <p class="desc">
+        A simple, FOSS, federated social media platform made in rust with
+        End-To-End-Encryption.
+      </p>
     </div>
-    <p class="desc">
-      A simple, FOSS, federated social media platform made in rust with
-      End-To-End-Encryption.
-    </p>
+    <hr id="split" />
     <div id="showcase">
       <div>
         <h3>
@@ -59,8 +62,7 @@ import { Icon } from "astro-icon";
             >Eludris.toml</code
           >
           <strike>and <code>.env</code></strike>, but it also actively encourages
-          you to make your own clients and even extend the base Eludris implementation
-          with your own features and provides support for that!
+          you to make your own clients, bots, API wrappers and so on.
         </p>
       </div>
     </div>
@@ -73,7 +75,6 @@ import { Icon } from "astro-icon";
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - calc(2em + 20px));
     color: #eeeeee;
     gap: 1.5em;
   }
@@ -88,27 +89,39 @@ import { Icon } from "astro-icon";
     border-radius: 5%;
   }
 
+  #first {
+    display: flex;
+    flex-direction: column;
+    min-height: 90vh;
+    padding: 1em;
+  }
+
   #logo-container {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 1rem;
+    gap: 1em;
+    flex-grow: 0.6;
+  }
+
+  #split {
+    width: 90vw;
   }
 
   #showcase {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0.25em;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
   }
 
   #showcase > div {
     padding: 1em;
-    max-width: 40em;
-    min-height: 10em;
-    background-color: #2d2639;
-    margin: 5px;
-    border-radius: 10px;
+    flex-grow: 1;
   }
+
+  #showcase > div:nth-child(even) {
+    background-color: #2d2639;
+ }
 
   #showcase > div > h3 > [astro-icon] {
     width: 1.5em;
@@ -160,11 +173,14 @@ import { Icon } from "astro-icon";
     #showcase {
       display: flex;
       flex-direction: column;
+      padding-bottom: 1em;
     }
 
     #showcase > div {
-      width: 85vw;
+      padding: 1em;
+      width: 100%;
       height: auto;
+      box-sizing: border-box;
     }
   }
 </style>
