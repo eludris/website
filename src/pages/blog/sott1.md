@@ -89,8 +89,6 @@ That was a pretty eventful 2 weeks for what was absolutely dead just a while ago
 As anything Eludris related if you have any improvements or edits you can make
 to this website and blog make sure to make a pr and we will check it out.
 
-&nbsp;
-
 That's all for this month's SOTT, hope you have a great month and until next time!
 
 \- Enoki & The @Eludris team.

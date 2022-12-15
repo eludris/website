@@ -14,10 +14,11 @@ hide: true
   - [Eludris Development](#eludris-development)
   - [Eludris Community](#eludris-community)
   - [API Wrappers](#api-wrappers)
+- [Conclusion](#conclusion)
 
 ## Greeting
 
-Well hello there my friends, first let me start with mentioning how - and as you've probably noticed (if you aren't blind) or
+Well hello there my friends, first let me start with mentioning how - and as you've probably noticed (if you aren't blind or
 didn't get cache'd) - Elusite (this website) has got a minor makeover, this isn't final nor complete yet and is subject to a
 lot of possible changes :D (may be if you're reading from the future).
 
@@ -65,18 +66,24 @@ argument parsing on meth.
 Here's an example of that:
 
 ```py
-@manager.command(aliases=["cool-alias", "not_so_cool_alias"])
-async def my_command(ctx: sail.Context, x: typing.List[int], *, y: bool) -> None:
-    await bot.rest.send_message(
-        "sail",
-        f"Got {len(x)} number(s): {x}. "
-        f"Flag y was set to {y}. "
-        f"Invoked as {ctx.invoked_with} with prefix {ctx.prefix}.",
-    )
+@sail.param("flag", short="f")
+@manager.command()
+async def test(
+    ctx: sail.Context,
+    ints: sail.Greedy[typing.Set[int]],
+    strs: typing.Sequence[str],
+    bools: typing.List[bool],
+    int_: int,
+    ints2: typing.FrozenSet[int],
+    *,
+    switch: bool,
+    flag: int,
+) -> None:
+    ...
 ```
 
 Additionally, this month we also got a go Eludris api wrapper called
-[eludris.go](https://github.com/eludris-community/eludris.go) by @ooliver1 here's a taste of that:
+[eludris.go](https://github.com/eludris-community/eludris.go) by @ooliver1, here's a taste of that:
 
 ```go
 func onMessage(msg *events.MessageEvent) {
@@ -106,6 +113,25 @@ func main() {
 }
 ```
 
+We also got a TypeScript wrapper called [Evangeline](https://github.com/toolifelesstocode/evangeline), hope you JS shills are
+happy now >:D
+
+Here's a little example of that:
+
+```ts
+import { Bot } from "evangeline";
+
+const bot = new Bot("new bot name");
+
+bot.on("messageCreate", async (msg) => {
+  if (msg.content == "!speed") {
+    await bot.send("Am I fast?");
+  }
+});
+
+bot.connect();
+```
+
 Finally, [uwuki](https://github.com/enokiun/uwuki) got the actual wrapper parts of it surgically removed and transplanted over
 to [eludrs](https://github.com/eludris-community/eludrs), here's an example of what it looks like now:
 
@@ -126,3 +152,15 @@ async fn main() {
     }
 }
 ```
+
+## Conclusion
+
+Welp, that's about all for this month's SOTT, while it may not seem like much it's because most of the work happened was more
+on the boring side so I can't really mention it here <img alt="A scuffed crying emoji" src="https://cdn.discordapp.com/emojis/980418824975319040.webp?size=96&quality=lossless" width="30em">.
+
+If you're interested in all that stuff then perhaps you might want to check out Documentation (link in the navbar) or join our
+Discord server (link in the footer)!
+
+That's all for this month's SOTT, hope you have a great month and until next time!
+
+\- Enoki & The @Eludris team.

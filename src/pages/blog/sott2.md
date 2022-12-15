@@ -144,8 +144,6 @@ Welp, that was a fairly fun ~~two~~ month~~s~~, it was very Eludris focused and
 nothing really happened on the Cognite side, that might change next month however,
 who knows.
 
-&nbsp;
-
 That's all for this month's SOTT, hope you have a great month and until next time!
 
 \- Enoki & The @Eludris team.
