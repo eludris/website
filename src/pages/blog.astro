@@ -23,7 +23,7 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
     <hr />
     <ul id="posts">
       {
-        posts.map((post) => ( !post.frontmatter.draft &&
+        posts.map((post) => ( !post.frontmatter.hide &&
           <li>
             <time datetime={post.frontmatter.pubDate} style="color: #aaaaaa;">
               {new Date(post.frontmatter.pubDate).toLocaleDateString("en-uk", {
