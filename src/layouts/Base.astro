@@ -60,8 +60,8 @@ const stars = fetch("https://api.github.com/repos/Eludris/elusite")
       <span
         >&copy; {today.getFullYear()} Eludris. All rights reserved. <span
           style="color: #777777">|</span
-        > This repository has <span style="color: #bbbb22">{stars} stars</span> on
-        github.</span
+        > This repository has <span style="color: #f5f52c">{stars} stars</span> on
+        <a id="footer-github" href="https://github.com/eludris/elusite">GitHub.</a></span
       >
       <div id="footer-links">
         <a href="https://github.com/eludris"
@@ -130,8 +130,8 @@ const stars = fetch("https://api.github.com/repos/Eludris/elusite")
 
       #nav-logo > img {
         border-radius: 10px;
-        width: 1.5rem;
-        height: 1.5rem;
+        width: 2.5rem;
+        height: 2.5rem;
         position: relative;
         top: 0.25rem;
         cursor: pointer;
@@ -146,6 +146,17 @@ const stars = fetch("https://api.github.com/repos/Eludris/elusite")
         color: #eeeeee;
         background-color: #3e374a;
         align-items: center;
+      }
+
+      #footer-github {
+        color: #110033;
+        border-color: #110033;
+        transition: border-bottom ease-in-out 200ms, color ease-in-out 200ms;
+      }
+
+      #footer-github:hover {
+        color: #211233;
+        border-color: #211233;
       }
 
       #footer-links {
@@ -178,6 +189,7 @@ const stars = fetch("https://api.github.com/repos/Eludris/elusite")
         text-decoration: none;
         color: #7865aa;
         border-bottom: 2px solid #332143;
+        transition: border-bottom ease-in-out 200ms;
       }
 
       :global(a:hover) {
