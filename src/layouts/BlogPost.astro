@@ -48,6 +48,16 @@ const {
       </div>
       <slot />
     </article>
+  <script>
+    let tags = ["h2", "h3", "h4", "h5", "h6"];
+    for (let i = 0; i < tags.length; i++) {
+      let nodes = document.getElementsByTagName(tags[i]);
+      for (let j = 0; j < nodes.length; j++) {
+        let node = nodes[j];
+        node.innerHTML = `<a href="${node.id}" class="header-href">${node.innerText}<span class="header-symbol">${"#".repeat(i+1)}</span></a>`;
+      }
+    }
+  </script>
   </main>
 </Base>
 
@@ -78,9 +88,33 @@ const {
   :global(.astro-code) {
     padding: 10px;
     border-radius: 4px;
+    margin-left: 10px;
   }
 
   :global(code) {
     background-color: #0d1117;
+  }
+
+  :global(.header-href) {
+    display: inline;
+    color: inherit;
+    border-width: 0;
+    transition: border-width ease-in-out 75ms;
+  }
+
+  :global(.header-symbol) {
+    margin-left: 5px;
+    font-size: 0.7em;
+    color: #aaaaaa;
+    opacity: 0;
+    transition: opacity ease-in-out 75ms;
+  }
+
+  :global(.header-href:hover > .header-symbol) {
+    opacity: 1;
+  }
+
+  :global(p) {
+    margin-left: 10px;
   }
 </style>

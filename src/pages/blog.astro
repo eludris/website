@@ -20,11 +20,11 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
         development updates, new plans or just plain shitposting.
       </p>
     </div>
-    <hr />
-    <ul id="posts">
+    <hr id="sep" />
+    <div id="posts">
       {
         posts.map((post) => ( !post.frontmatter.hide &&
-          <li>
+          <div class="post">
             <time datetime={post.frontmatter.pubDate} style="color: #aaaaaa;">
               {new Date(post.frontmatter.pubDate).toLocaleDateString("en-uk", {
                 year: "numeric",
@@ -35,14 +35,25 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
             - <a href={post.url}>{post.frontmatter.title}</a>
             <br />
             <p class="post-description">{post.frontmatter.description}</p>
-          </li>
+          </div>
         ))
       }
-    </ul>
+    </div>
   </main>
 </Base>
 
 <style>
+  main {
+    margin: 0 auto;
+    padding: 1em;
+    max-width: 90vw;
+    min-height: 100vh;
+    color: #eeeeee;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
   #head {
     text-align: center;
     margin: 10px;
@@ -52,20 +63,25 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
     font-size: 1.5em;
   }
 
+  #sep {
+    width: 80vw;
+  }
+
   #posts {
     text-align: center;
-    font-size: 1.5em;
+    font-size: 1.25em;
     list-style-type: none;
     margin: 10px;
     padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    justify-content: center;
   }
 
-  main {
-    margin: 20px auto;
+  .post {
     padding: 1em;
-    max-width: 70em;
-    min-height: 100vh;
-    color: #eeeeee;
+    border-left: 1px solid #aaaaaa;
+    border-right: 1px solid #aaaaaa;
   }
 
   .post-description {
@@ -76,6 +92,16 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
   @media only screen and (max-width: 1200px) {
     main {
       margin: 5px;
+    }
+
+    #posts {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .post {
+      padding: 0;
+      border-width: 0;
     }
   }
 </style>
