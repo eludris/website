@@ -23,8 +23,8 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
     <hr id="sep" />
     <div id="posts">
       {
-        posts.map((post) => ( !post.frontmatter.hide &&
-          <div class="post">
+        posts.map((post, i) => ( !post.frontmatter.hide &&
+          <div class={ (i % 3 === 1) ? "post centre" : "post" }>
             <time datetime={post.frontmatter.pubDate} style="color: #aaaaaa;">
               {new Date(post.frontmatter.pubDate).toLocaleDateString("en-uk", {
                 year: "numeric",
@@ -68,8 +68,7 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
   }
 
   #posts {
-    text-align: center;
-    font-size: 1.25em;
+    text-align: center; font-size: 1.25em;
     list-style-type: none;
     margin: 10px;
     padding: 10px;
@@ -80,6 +79,9 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
 
   .post {
     padding: 1em;
+  }
+
+  .centre {
     border-left: 1px solid #aaaaaa;
     border-right: 1px solid #aaaaaa;
   }
