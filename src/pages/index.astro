@@ -5,15 +5,17 @@ import { Icon } from "astro-icon";
 
 <Base>
   <main>
-    <div id="banner">
-    <video id="video" src="https://cdn.discordapp.com/attachments/980412957794136087/1062460345270161538/literally-fucking-eludris.mp4" autoplay loop />
-
     <div id="first">
       <h1 id="logo-text">Your platform.<br>Your rules.</h1>
+      <h1 id="real-slogan" style="display: none">Microwaving mice is wrong they say</h1>
       <p class="desc">
         A simple, End-To-End-Encrypted, FOSS, federated social media platform, where <em>you</em> decide what goes.
       </p>
-    </div>
+      <div id="learn-more-wrapper">
+        <a id="learn-more-button" href="https://eludris.github.io/docs"><button>
+          Learn more <Icon name="eva:external-link-fill" />
+        </button></a>
+      </div>
     </div>
     <hr id="split" />
     <div id="showcase">
@@ -76,18 +78,6 @@ import { Icon } from "astro-icon";
     gap: 1.5em;
   }
 
-  #banner {
-    background-size: cover;
-    background-position: 0 -400px;
-    width: 100vw;
-  }
-
-  #banner > video {
-    position: absolute;
-    z-index: -2;
-    width: 100vw;
-  }
-
   .desc {
     text-align: center;
     padding: 0;
@@ -96,11 +86,50 @@ import { Icon } from "astro-icon";
   #first {
     display: flex;
     flex-direction: column;
-    padding: 100px;
+    padding: 25px 100px;
   }
 
   #logo-text {
     text-align: center;
+  }
+
+  #learn-more-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #learn-more-button {
+    text-decoration: none;
+    border: unset;
+  }
+
+  #learn-more-button > button {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    border: 3px solid var(--purple-500);
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 10px 20px;
+    background-color: var(--purple-200);
+    color: var(--gray-600);
+    box-shadow: 0 2px 4px var(--purple-100);
+    transition: box-shadow ease-in-out 200ms, color ease-in-out 200ms, margin ease-in-out 200ms;
+    margin-top: 2px;
+    margin-bottom: 0;
+  }
+
+  #learn-more-button > button:hover {
+    box-shadow: 0 4px 10px var(--purple-100);
+    color: var(--gray-500);
+    margin-top: 0px;
+    margin-bottom: 0;
+    margin-bottom: 2px;
+  }
+
+  #learn-more-button > button > [astro-icon] {
+    width: 25px;
   }
 
   #split {
@@ -142,6 +171,10 @@ import { Icon } from "astro-icon";
   }
 
   @media only screen and (max-width: 1200px) {
+    #first {
+      padding: 10px;
+    }
+
     #showcase {
       display: flex;
       flex-direction: column;

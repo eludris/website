@@ -47,7 +47,10 @@ const stars = fetch("https://api.github.com/repos/Eludris/elusite")
   <body>
     <nav>
       <a href="/" id="nav-logo">
-        <img src="/das_ding.png" alt="eludris" />
+        <img src="/das_ding.png" alt="The Eludris logo" />
+        <a href="/" class="nav-link" id="eludris-nav-link">
+          <span>Eludris</span>
+        </a>
       </a>
       <a href="/blog" class="nav-link"><span>Blog</span></a>
       <a href="https://eludris.github.io/docs" class="nav-link"><span>Docs</span></a>
@@ -143,7 +146,6 @@ const stars = fetch("https://api.github.com/repos/Eludris/elusite")
       }
 
       #nav-logo {
-        margin-right: auto;
         border-width: 0px;
       }
 
@@ -154,6 +156,10 @@ const stars = fetch("https://api.github.com/repos/Eludris/elusite")
         position: relative;
         top: 0.25rem;
         cursor: pointer;
+      }
+
+      #eludris-nav-link {
+        margin-right: auto;
       }
 
       footer {
@@ -217,6 +223,10 @@ const stars = fetch("https://api.github.com/repos/Eludris/elusite")
       }
 
       @media only screen and (max-width: 1200px) {
+        nav {
+          padding: 0 5px 0 17px;
+        }
+
         footer {
           flex-direction: column;
         }
