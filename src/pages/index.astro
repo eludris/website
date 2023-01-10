@@ -5,18 +5,15 @@ import { Icon } from "astro-icon";
 
 <Base>
   <main>
+    <div id="banner">
+    <video id="video" src="https://cdn.discordapp.com/attachments/980412957794136087/1062460345270161538/literally-fucking-eludris.mp4" autoplay loop />
+
     <div id="first">
-      <div id="logo-container">
-        <img id="logo" src="/das_ding.png" alt="The Eludris logo, Das Ding." />
-        <div id="logo-text">
-          <h1>Eludris</h1>
-          <h2>A platform that's <em style="color: #aa77dd">yours</em></h2>
-        </div>
-      </div>
+      <h1 id="logo-text">Your platform.<br>Your rules.</h1>
       <p class="desc">
-        A simple, FOSS, federated social media platform made in rust with
-        End-To-End-Encryption.
+        A simple, End-To-End-Encrypted, FOSS, federated social media platform, where <em>you</em> decide what goes.
       </p>
+    </div>
     </div>
     <hr id="split" />
     <div id="showcase">
@@ -79,29 +76,31 @@ import { Icon } from "astro-icon";
     gap: 1.5em;
   }
 
-  .desc {
-    text-align: center;
-    margin: 0 10px;
+  #banner {
+    background-size: cover;
+    background-position: 0 -400px;
+    width: 100vw;
   }
 
-  #logo {
-    width: 16em;
-    border-radius: 5%;
+  #banner > video {
+    position: absolute;
+    z-index: -2;
+    width: 100vw;
+  }
+
+  .desc {
+    text-align: center;
+    padding: 0;
   }
 
   #first {
     display: flex;
     flex-direction: column;
-    min-height: 90vh;
-    padding: 1em;
+    padding: 100px;
   }
 
-  #logo-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1em;
-    flex-grow: 0.6;
+  #logo-text {
+    text-align: center;
   }
 
   #split {
@@ -143,33 +142,6 @@ import { Icon } from "astro-icon";
   }
 
   @media only screen and (max-width: 1200px) {
-    #logo {
-      width: 12rem;
-    }
-
-    #logo-container {
-      flex-direction: column;
-    }
-
-    #logo-text {
-      margin: 10px 0 0 0;
-      text-align: center;
-    }
-
-    #logo-text > h1,
-    h2 {
-      margin: 0;
-      padding: 0;
-    }
-
-    #logo-text > h1 {
-      font-size: 3rem;
-    }
-
-    #logo-text > h2 {
-      font-size: 1rem;
-    }
-
     #showcase {
       display: flex;
       flex-direction: column;

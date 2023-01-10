@@ -3,4 +3,4 @@
 
 export const SITE_TITLE = "Eludris";
 export const SITE_DESCRIPTION = "The official Eludris website.";
-export const EMBED_COLOUR = "#bc13fe";
+export const EMBED_COLOUR = "#e566ff";
