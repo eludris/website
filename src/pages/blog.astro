@@ -16,8 +16,7 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
     <div id="head">
       <h1>The Eludris Blog Index</h1>
       <p>
-        A place where you can find all our blogs whether they are about
-        development updates, new plans or just plain shitposting.
+        A place where you can find all our blogs be it development updates or just plain shitposting.
       </p>
     </div>
     <hr id="sep" />
@@ -25,14 +24,16 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
       {
         posts.map((post, i) => ( !post.frontmatter.hide &&
           <div class={ (i % 3 === 1) ? "post centre" : "post" }>
-            <time datetime={post.frontmatter.pubDate} style="color: #aaaaaa;">
-              {new Date(post.frontmatter.pubDate).toLocaleDateString("en-uk", {
-                year: "numeric",
-                month: "short",
-                day: "numeric",
-              })}{" "}
-            </time>{" "}
-            - <a href={post.url}>{post.frontmatter.title}</a>
+            <h2>
+              <time datetime={post.frontmatter.pubDate} style="color: #aaaaaa;">
+                {new Date(post.frontmatter.pubDate).toLocaleDateString("en-uk", {
+                  year: "numeric",
+                  month: "short",
+                  day: "numeric",
+                })}{" "}
+              </time>{" "}
+              - <a href={post.url}>{post.frontmatter.title}</a>
+            </h2>
             <br />
             <p class="post-description">{post.frontmatter.description}</p>
           </div>
@@ -48,7 +49,6 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
     padding: 1em;
     max-width: 90vw;
     min-height: 100vh;
-    color: #eeeeee;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -60,7 +60,8 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
   }
 
   #head > p {
-    font-size: 1.5em;
+    max-width: 40vw;
+    margin: 0 auto;
   }
 
   #sep {
@@ -68,7 +69,7 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
   }
 
   #posts {
-    text-align: center; font-size: 1.25em;
+    text-align: center;
     list-style-type: none;
     margin: 10px;
     padding: 10px;
@@ -81,6 +82,12 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
     padding: 1em;
   }
 
+  .post > h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 5px 0;
+  }
+
   .centre {
     border-left: 1px solid #aaaaaa;
     border-right: 1px solid #aaaaaa;
@@ -88,8 +95,11 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
 
   .post-description {
     color: #aaaaaa;
-    font-size: 0.8em;
+    text-align: center;
+    max-width: 80%;
+    margin: 10px auto;
   }
+
 
   @media only screen and (max-width: 1200px) {
     main {

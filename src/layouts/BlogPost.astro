@@ -54,6 +54,7 @@ const {
       let nodes = document.getElementsByTagName(tags[i]);
       for (let j = 0; j < nodes.length; j++) {
         let node = nodes[j];
+        if (node.parentNode.tagName != "ARTICLE") continue;
         node.innerHTML = `<a href="${node.id}" class="header-href">${node.innerText}<span class="header-symbol">${"#".repeat(i+1)}</span></a>`;
       }
     }
@@ -68,9 +69,9 @@ const {
   }
 
   main {
-    margin: 5px auto;
+    margin: 10px auto;
     padding: 1em;
-    width: 70vw;
+    width: 60vw;
     min-height: 100vh;
   }
 
@@ -87,25 +88,31 @@ const {
 
   :global(.astro-code) {
     padding: 10px;
-    border-radius: 4px;
+    border-radius: 10px;
     margin-left: 10px;
   }
 
-  :global(code) {
-    background-color: #0d1117;
+  :global(pre) {
+    background-color: var(--color-code-bg);
   }
 
   :global(.header-href) {
     display: inline;
     color: inherit;
     border-width: 0;
-    transition: border-width ease-in-out 75ms;
+  }
+
+  :global(.header-href:hover) {
+    display: inline;
+    color: var(--gray-400);
+    border-color: var(--purple-400);
+    border-width: 2px;
   }
 
   :global(.header-symbol) {
-    margin-left: 5px;
-    font-size: 0.7em;
-    color: #aaaaaa;
+    margin-left: 10px;
+    font-size: 15px;
+    color: var(--gray-500);
     opacity: 0;
     transition: opacity ease-in-out 75ms;
   }
@@ -114,7 +121,7 @@ const {
     opacity: 1;
   }
 
-  :global(p) {
+  :global(article > p) {
     margin-left: 10px;
   }
 </style>

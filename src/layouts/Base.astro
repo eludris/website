@@ -87,9 +87,23 @@ const stars = fetch("https://api.github.com/repos/Eludris/elusite")
         --font-size-lg: clamp(1.2rem, 0.8vw + 1.2rem, 1.5rem);
         --font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
 
-        --color-text: #eeeeee;
-        --color-bg: #211233;
-        --color-border: hsl(17, 24%, 90%);
+        --purple-100: hsl(257, 33%, 8%);
+        --purple-200: hsl(257, 35%, 13%);
+        --purple-300: hsl(257, 44%, 18%);
+        --purple-400: hsl(262, 58%, 22%);
+        --purple-500: hsl(262, 73%, 29%);
+
+        --gray-100: hsl(249, 17%, 12%);
+        --gray-200: hsl(249, 29%, 16%);
+        --gray-300: hsl(249, 33%, 39%);
+        --gray-400: hsl(249, 46%, 49%);
+        --gray-500: hsl(249, 48%, 64%);
+        --gray-600: hsl(249, 81%, 85%);
+
+        --color-text: hsl(249, 82%, 88%);
+        --color-code-bg: hsl(260, 32%, 18%);
+        --color-bg: var(--gray-100);
+        --color-border: var(--purple-300);
       }
 
       html {
@@ -114,17 +128,17 @@ const stars = fetch("https://api.github.com/repos/Eludris/elusite")
 
       .nav-link {
         margin: 0;
-        color: black;
         width: 7em;
         text-align: center;
         line-height: 2em;
-        transition: background-color ease-in-out 200ms, border-width ease-in-out 100ms;
-        color: #eeeeee;
+        transition: background-color ease-in-out 200ms, border-width ease-in-out 100ms, color ease-in-out 200ms;
+        color: var(--color-text);
         border-width: 0px;
       }
 
       .nav-link:hover {
-        background-color: #332143;
+        color: var(--gray-600);
+        background-color: var(--purple-300);
       }
 
       #nav-logo {
@@ -148,19 +162,19 @@ const stars = fetch("https://api.github.com/repos/Eludris/elusite")
         justify-content: space-evenly;
         text-align: center;
         color: #eeeeee;
-        background-color: #3e374a;
+        background-color: var(--purple-200);
         align-items: center;
       }
 
       #footer-github {
-        color: #110033;
-        border-color: #110033;
+        color: var(--color-text);
+        border-color: var(--gray-300);
         transition: border-bottom ease-in-out 200ms, color ease-in-out 200ms;
       }
 
       #footer-github:hover {
-        color: #211233;
-        border-color: #211233;
+        color: var(--gray-500);
+        border-color: var(--gray-500);
       }
 
       #footer-links {
@@ -191,13 +205,14 @@ const stars = fetch("https://api.github.com/repos/Eludris/elusite")
 
       :global(a) {
         text-decoration: none;
-        color: #7865aa;
-        border-bottom: 2px solid #332143;
-        transition: border-bottom ease-in-out 200ms;
+        color: var(--gray-500);
+        border-bottom: 2px solid var(--gray-300);
+        transition: border-bottom ease-in-out 200ms, color ease-in-out 200ms;
       }
 
       :global(a:hover) {
-        border-bottom: 2px solid #553284;
+        color: var(--gray-400);
+        border-bottom: 2px solid var(--purple-400);
       }
 
       @media only screen and (max-width: 1200px) {
