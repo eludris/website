@@ -19,10 +19,8 @@ import { Icon } from "astro-icon";
     </div>
     <hr id="split" />
     <div id="showcase">
-      <div>
-        <h3>
-          <Icon name="twemoji:dollar-banknote" /> Fully free and open source, forever
-        </h3>
+      <div class="left">
+        <h3><Icon name="mdi:currency-usd" /> Fully free and open source, forever </h3>
         <p class="showcase-p">
           <!-- Now before you complain about the whackass way some of the tags are formatted, don't blame me, blame prettier -->
           At Eludris&#8482; we really like our software FOSS <strike
@@ -31,8 +29,8 @@ import { Icon } from "astro-icon";
           the permissive MIT license.
         </p>
       </div>
-      <div>
-        <h3><Icon name="twemoji:feather" /> Lightweight and federated</h3>
+      <div class="right">
+        <h3><Icon name="mdi:feather" /> Lightweight and federated</h3>
         <p class="showcase-p">
           Eludris is federated by nature, which means that anyone can host their
           own instance anywhere and it will communicate with the other instances
@@ -40,8 +38,8 @@ import { Icon } from "astro-icon";
           instance, all while being fully contained thanks to docker.
         </p>
       </div>
-      <div>
-        <h3><Icon name="twemoji:locked" /> Secure</h3>
+      <div class="left">
+        <h3><Icon name="mdi:lock" /> Secure</h3>
         <p class="showcase-p">
           Eludris really cares about your privacy, which is why it provides federation
           <em>and</em> End-To-End-Encryption so your mind can be at peace no
@@ -49,9 +47,9 @@ import { Icon } from "astro-icon";
           shady instances.
         </p>
       </div>
-      <div>
+      <div class="right">
         <h3>
-          <Icon name="twemoji:paintbrush" /> A platform that's <em
+          <Icon name="mdi:shimmer" /> A platform that's <em
             >truly <b>yours</b>
           </em>
         </h3>
@@ -146,26 +144,46 @@ import { Icon } from "astro-icon";
   #showcase {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-  }
-
-  #showcase > div {
-    padding: 1em;
-    flex-grow: 1;
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    box-sizing: border-box;
   }
 
   #showcase > div:nth-child(even) {
-    background-color: #2d2639;
- }
+    background-color: var(--gray-200);
+  }
+
+  #showcase > div {
+    display: flex;
+    height: 300px;
+    padding: 25px 20vw;
+  }
+
+  #showcase > div > h3  {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #showcase > div.left > h3 {
+    order: 1;
+  }
 
   #showcase > div > h3 > [astro-icon] {
-    width: 1.5em;
+    width: 2em;
+    height: 2em;
     position: relative;
-    top: 0.25em;
+    top: 0.55em;
+    color: var(--pink-600);
   }
 
   .showcase-p {
-    margin-top: 15px;
+    width: 50%;
+    margin: auto 0;
   }
 
   code {
@@ -185,7 +203,6 @@ import { Icon } from "astro-icon";
     #showcase {
       display: flex;
       flex-direction: column;
-      padding-bottom: 1em;
     }
 
     #showcase > div {
@@ -193,6 +210,22 @@ import { Icon } from "astro-icon";
       width: 100%;
       height: auto;
       box-sizing: border-box;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1em;
+    }
+
+    #showcase > div > h3 {
+      width: 100%;
+    }
+
+    .showcase-p {
+      width: 100%;
+    }
+
+    #showcase > div.left > h3 {
+      order: 0;
     }
   }
 </style>
