@@ -26,7 +26,7 @@ const stars = fetch("https://api.github.com/repos/Eludris/elusite")
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/das_ding.svg" />
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
@@ -37,7 +37,7 @@ const stars = fetch("https://api.github.com/repos/Eludris/elusite")
     <meta property="og:image" content="/das_ding.png" />
     <meta property="og:image:width" content="300" />
     <meta property="og:image:height" content="300" />
-    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:card" content="summary" />
     <meta property="twitter:url" content="." />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
@@ -47,7 +47,7 @@ const stars = fetch("https://api.github.com/repos/Eludris/elusite")
   <body>
     <nav>
       <a href="/" id="nav-logo">
-        <img src="/das_ding.png" alt="The Eludris logo" />
+        <img src="/das_ding.svg" alt="The Eludris logo" />
         <a href="/" class="nav-link" id="eludris-nav-link">
           <span>Eludris</span>
         </a>
@@ -95,6 +95,15 @@ const stars = fetch("https://api.github.com/repos/Eludris/elusite")
         --purple-300: hsl(257, 44%, 18%);
         --purple-400: hsl(262, 58%, 22%);
         --purple-500: hsl(262, 73%, 29%);
+        --purple-600: hsl(262, 79%, 42%);
+
+        --pink-100: hsl(290, 13%, 20%);
+        --pink-200: hsl(290, 19%, 25%);
+        --pink-300: hsl(290, 32%, 35%);
+        --pink-400: hsl(290, 43%, 49%);
+        --pink-500: hsl(290, 63%, 63%);
+        --pink-600: hsl(290, 100%, 70%);
+        --pink-700: hsl(290, 100%, 60%);
 
         --gray-100: hsl(249, 17%, 12%);
         --gray-200: hsl(249, 29%, 16%);
@@ -123,26 +132,24 @@ const stars = fetch("https://api.github.com/repos/Eludris/elusite")
       nav {
         display: flex;
         flex-direction: row;
-        height: 30px;
         padding: 0 12em 0 12rem;
         align-items: stretch;
         margin-bottom: 20px;
+        font-size: 18px;
       }
 
       .nav-link {
         margin: 0;
         width: 100px;
         text-align: center;
-        height: 50px;
-        line-height: 50px;
-        transition: background-color ease-in-out 200ms, border-width ease-in-out 100ms, color ease-in-out 200ms;
-        color: var(--color-text);
+        padding-top: 25px;
+        transition: border-width ease-in-out 100ms, color ease-in-out 200ms;
+        color: var(--gray-500);
         border-width: 0px;
       }
 
       .nav-link:hover {
         color: var(--gray-600);
-        background-color: var(--purple-300);
       }
 
       #nav-logo {
@@ -165,10 +172,11 @@ const stars = fetch("https://api.github.com/repos/Eludris/elusite")
       footer {
         padding: 15px;
         display: flex;
+        font-size: 16px;
         flex-direction: row;
         justify-content: space-evenly;
         text-align: center;
-        color: #eeeeee;
+        color: var(--color-text);
         background-color: var(--purple-200);
         align-items: center;
       }

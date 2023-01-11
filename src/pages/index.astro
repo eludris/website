@@ -108,21 +108,26 @@ import { Icon } from "astro-icon";
     display: flex;
     flex-direction: row;
     gap: 10px;
-    border: 3px solid var(--purple-500);
+    border: 3px solid var(--purple-600);
     border-radius: 20px;
     font-size: 20px;
     padding: 10px 20px;
     background-color: var(--purple-200);
     color: var(--gray-600);
     box-shadow: 0 2px 4px var(--purple-100);
-    transition: box-shadow ease-in-out 200ms, color ease-in-out 200ms, margin ease-in-out 200ms;
+    transition: box-shadow ease-in-out 200ms, color ease-in-out 200ms, background-color ease-in-out 200ms, margin ease-in-out 200ms;
     margin-top: 2px;
+    width: 200px;
+    text-align: center;
+    justify-content: space-between;
     margin-bottom: 0;
+    cursor: pointer;
   }
 
   #learn-more-button > button:hover {
-    box-shadow: 0 4px 10px var(--purple-100);
-    color: var(--gray-500);
+    box-shadow: 0 5px 20px var(--purple-100);
+    background-color: var(--purple-300);
+    color: var(--gray-600);
     margin-top: 0px;
     margin-bottom: 0;
     margin-bottom: 2px;
