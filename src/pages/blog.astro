@@ -16,28 +16,38 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
     <div id="head">
       <h1>The Eludris Blog Index</h1>
       <p>
-        A place where you can find all our blogs be it development updates or just plain shitposting.
+        A place where you can find all our blogs be it development updates or
+        just plain shitposting.
       </p>
     </div>
     <hr id="sep" />
     <div id="posts">
       {
-        posts.map((post, i) => ( !post.frontmatter.hide &&
-          <div class={ (i % 3 === 1) ? "post centre" : "post" }>
-            <h2>
-              <time datetime={post.frontmatter.pubDate} style="color: #aaaaaa;">
-                {new Date(post.frontmatter.pubDate).toLocaleDateString("en-uk", {
-                  year: "numeric",
-                  month: "short",
-                  day: "numeric",
-                })}{" "}
-              </time>{" "}
-              - <a href={post.url}>{post.frontmatter.title}</a>
-            </h2>
-            <br />
-            <p class="post-description">{post.frontmatter.description}</p>
-          </div>
-        ))
+        posts.map(
+          (post, i) =>
+            !post.frontmatter.hide && (
+              <div class={i % 3 === 1 ? "post centre" : "post"}>
+                <h2>
+                  <time
+                    datetime={post.frontmatter.pubDate}
+                    style="color: #aaaaaa;"
+                  >
+                    {new Date(post.frontmatter.pubDate).toLocaleDateString(
+                      "en-uk",
+                      {
+                        year: "numeric",
+                        month: "short",
+                        day: "numeric",
+                      }
+                    )}{" "}
+                  </time>{" "}
+                  - <a href={post.url}>{post.frontmatter.title}</a>
+                </h2>
+                <br />
+                <p class="post-description">{post.frontmatter.description}</p>
+              </div>
+            )
+        )
       }
     </div>
   </main>
@@ -109,7 +119,7 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
       display: flex;
       flex-direction: column;
     }
-    
+
     .post {
       padding: 0;
       border-width: 0;

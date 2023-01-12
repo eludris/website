@@ -48,17 +48,19 @@ const {
       </div>
       <slot />
     </article>
-  <script>
-    let tags = ["h2", "h3", "h4", "h5", "h6"];
-    for (let i = 0; i < tags.length; i++) {
-      let nodes = document.getElementsByTagName(tags[i]);
-      for (let j = 0; j < nodes.length; j++) {
-        let node = nodes[j];
-        if (node.parentNode.tagName != "ARTICLE") continue;
-        node.innerHTML = `<a href="${node.id}" class="header-href">${node.innerText}<span class="header-symbol">${"#".repeat(i+1)}</span></a>`;
+    <script>
+      let tags = ["h2", "h3", "h4", "h5", "h6"];
+      for (let i = 0; i < tags.length; i++) {
+        let nodes = document.getElementsByTagName(tags[i]);
+        for (let j = 0; j < nodes.length; j++) {
+          let node = nodes[j];
+          if (node.parentNode.tagName != "ARTICLE") continue;
+          node.innerHTML = `<a href="${node.id}" class="header-href">${
+            node.innerText
+          }<span class="header-symbol">${"#".repeat(i + 1)}</span></a>`;
+        }
       }
-    }
-  </script>
+    </script>
   </main>
 </Base>
 

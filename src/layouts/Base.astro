@@ -48,12 +48,14 @@ const stars = fetch("https://api.github.com/repos/Eludris/elusite")
     <nav>
       <a href="/" id="nav-logo">
         <img src="/das_ding.svg" alt="The Eludris logo" />
-        <a href="/" class="nav-link" id="eludris-nav-link">
-          <span>Eludris</span>
-        </a>
+      </a><a href="/" class="nav-link" id="eludris-nav-link">
+        <span>Eludris</span>
       </a>
+
       <a href="/blog" class="nav-link"><span>Blog</span></a>
-      <a href="https://eludris.github.io/docs" class="nav-link"><span>Docs</span></a>
+      <a href="https://eludris.github.io/docs" class="nav-link"
+        ><span>Docs</span>
+      </a>
       <a href="https://github.com/eludris" class="nav-link"
         ><span>GitHub</span>
       </a>
@@ -64,8 +66,10 @@ const stars = fetch("https://api.github.com/repos/Eludris/elusite")
         >&copy; {today.getFullYear()} Eludris. All rights reserved. <span
           style="color: #777777">|</span
         > This repository has <span style="color: #f5f52c">{stars} stars</span> on
-        <a id="footer-github" href="https://github.com/eludris/elusite">GitHub.</a></span
-      >
+        <a id="footer-github" href="https://github.com/eludris/elusite"
+          >GitHub.</a
+        >
+      </span>
       <div id="footer-links">
         <a href="https://github.com/eludris"
           ><Icon name="akar-icons:github-fill" color="black" />
@@ -79,9 +83,7 @@ const stars = fetch("https://api.github.com/repos/Eludris/elusite")
           ><Icon name="logos:reddit-icon" />
         </a>
         <span style="color: #777777">|</span>
-        <a href="https://twitter.com/eludris"
-          ><Icon name="logos:twitter" />
-        </a>
+        <a href="https://twitter.com/eludris"><Icon name="logos:twitter" /></a>
       </div>
     </footer>
     <style>
@@ -151,7 +153,9 @@ const stars = fetch("https://api.github.com/repos/Eludris/elusite")
 
       .nav-link:hover {
         color: var(--color-text);
-        border-color: var(--pink-400); /* why do I have to do this twice? and no, no !important, we don't want css styles getting full of themselves bow, do we? */
+        border-color: var(
+          --pink-400
+        ); /* why do I have to do this twice? and no, no !important, we don't want css styles getting full of themselves bow, do we? */
       }
 
       #nav-logo {
