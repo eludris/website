@@ -6,15 +6,21 @@ import { Icon } from "astro-icon";
 <Base>
   <main>
     <div id="first">
-      <h1 id="logo-text">Your platform.<br>Your rules.</h1>
-      <h1 id="real-slogan" style="display: none">Microwaving mice is wrong they say</h1>
+      <h1 id="logo-text">Your platform.<br />Your rules.</h1>
+      <h1 id="real-slogan" style="display: none">
+        Microwaving mice is wrong they say
+      </h1>
       <p class="desc">
-        A simple, End-To-End-Encrypted, FOSS and federated platform, where <em>you</em> decide what goes.
+        A simple, End-To-End-Encrypted, FOSS and federated platform, where <em
+          >you</em
+        > decide what goes.
       </p>
       <div id="learn-more-wrapper">
-        <a id="learn-more-button" href="https://eludris.github.io/docs"><button>
-          Learn more <Icon name="eva:external-link-fill" />
-        </button></a>
+        <a id="learn-more-button" href="https://eludris.github.io/docs"
+          ><button>
+            Learn more <Icon name="eva:external-link-fill" />
+          </button>
+        </a>
       </div>
     </div>
     <hr id="split" />
@@ -24,13 +30,12 @@ import { Icon } from "astro-icon";
           <Icon name="mdi:currency-usd" />
         </div>
         <div class="showcase-content">
-          <h3>Fully free and open source, forever </h3>
+          <h3>Fully free and open source, forever</h3>
           <p>
             <!-- Now before you complain about the whackass way some of the tags are formatted, don't blame me, blame prettier -->
-            At Eludris&#8482; we really like our software FOSS <strike
-              >well, most of us anyway</strike
-            >, which is why Eludris is and forever will be free, open source and under
-            the permissive MIT license.
+            Here at Eludris, we strive to make free and open source software for
+            everyone to use, which is why Eludris is and forever will be free, open
+            source and under the permissive MIT license.
           </p>
         </div>
       </div>
@@ -39,26 +44,30 @@ import { Icon } from "astro-icon";
           <Icon name="mdi:leaf" />
         </div>
         <div class="showcase-content">
-          <h3> Lightweight and federated</h3>
+          <h3>Lightweight and federated</h3>
           <p>
-            Eludris is federated by nature, which means that anyone can host their
-            own instance anywhere and it will communicate with the other instances
-            that it cares about to fetch you your latest memes no matter your
-            instance, all while being fully contained thanks to docker.
+            Eludris is federated, which means that anyone can host their own
+            instance anywhere and it will communicate with the other instances
+            to fetch you your latest and greatest hot memes and subjectively bad
+            opinion no matter where it is, all while being fully contained
+            thanks to docker.
           </p>
         </div>
       </div>
       <div class="left">
         <div class="showcase-icon">
-          <Icon name="mdi:lock" /> 
+          <Icon name="mdi:lock" />
         </div>
         <div class="showcase-content">
           <h3>Secure</h3>
           <p>
-            Eludris really cares about your privacy, which is why it provides federation
-            <em>and</em> End-To-End-Encryption so your mind can be at peace no
-            matter which shady instance you're using!<br /><br />p.s. Do not use
-            shady instances.
+            Eludris really cares about your privacy, which is why it provides
+            federation and End-To-End-Encryption so your mind can be at peace no
+            matter how shady the instance you're using!
+            <br />
+            <br />
+            Not convinced yet? Host your own instance and own all your data, sounds
+            good?
           </p>
         </div>
       </div>
@@ -67,14 +76,12 @@ import { Icon } from "astro-icon";
           <Icon name="mdi:shimmer" />
         </div>
         <div class="showcase-content">
-          <h3>A platform that's <em>truly <b>yours</b></em></h3>
+          <h3>Fully under your control</h3>
           <p>
-            Eludris strives to be as configurable as it can, which is why not only
-            can you configure everything about your instance from a single <code
-              >Eludris.toml</code
-            >
-            <strike>and <code>.env</code></strike>, but it also actively encourages
-            you to make your own clients, bots, API wrappers and so on.
+            Eludris strives to be as configurable as possible, which is why it
+            makes it easy to configure everything from max message lengths to
+            ratelimit settings from a single toml file without needing any
+            coding experience.
           </p>
         </div>
       </div>
@@ -132,7 +139,8 @@ import { Icon } from "astro-icon";
     background-color: var(--pink-500);
     color: var(--purple-100);
     box-shadow: 0 2px 4px var(--purple-100);
-    transition: box-shadow ease-in-out 200ms, color ease-in-out 200ms, background-color ease-in-out 200ms, margin ease-in-out 200ms;
+    transition: box-shadow ease-in-out 200ms, color ease-in-out 200ms,
+      background-color ease-in-out 200ms, margin ease-in-out 200ms;
     margin-top: 42px;
     width: 200px;
     text-align: center;
