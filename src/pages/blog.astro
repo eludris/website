@@ -120,6 +120,10 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
       flex-direction: column;
     }
 
+    #head > p {
+      max-width: unset;
+    }
+
     .post {
       padding: 0;
       border-width: 0;
