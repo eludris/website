@@ -215,7 +215,7 @@ import { Icon } from "astro-icon";
   .showcase-content h3 {
     padding: 0;
     margin: 0;
-    font-size: 38px;
+    font-size: 30px;
     font-weight: 700;
     line-height: 40px;
   }
@@ -249,11 +249,20 @@ import { Icon } from "astro-icon";
       width: 100%;
     }
 
-    .showcase-p {
+    .showcase-content {
       width: 100%;
     }
 
-    #showcase > div.left > h3 {
+    .showcase-content > h3 {
+      text-align: center;
+    }
+
+    .showcase-icon > svg {
+      height: 150px;
+      width: 150px;
+    }
+
+    div.right > .showcase-icon {
       order: 0;
     }
   }
