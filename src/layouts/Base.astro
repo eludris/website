@@ -146,10 +146,12 @@ const stars = fetch("https://api.github.com/repos/Eludris/elusite")
         transition: border-width ease-in-out 100ms, color ease-in-out 200ms;
         color: var(--pink-500);
         border-width: 0px;
+        border-color: var(--pink-400);
       }
 
       .nav-link:hover {
-        color: var(--gray-600);
+        color: var(--color-text);
+        border-color: var(--pink-400); /* why do I have to do this twice? and no, no !important, we don't want css styles getting full of themselves bow, do we? */
       }
 
       #nav-logo {
