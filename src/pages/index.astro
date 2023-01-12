@@ -9,7 +9,7 @@ import { Icon } from "astro-icon";
       <h1 id="logo-text">Your platform.<br>Your rules.</h1>
       <h1 id="real-slogan" style="display: none">Microwaving mice is wrong they say</h1>
       <p class="desc">
-        A simple, End-To-End-Encrypted, FOSS, federated social media platform, where <em>you</em> decide what goes.
+        A simple, End-To-End-Encrypted, FOSS and federated platform, where <em>you</em> decide what goes.
       </p>
       <div id="learn-more-wrapper">
         <a id="learn-more-button" href="https://eludris.github.io/docs"><button>
@@ -20,47 +20,63 @@ import { Icon } from "astro-icon";
     <hr id="split" />
     <div id="showcase">
       <div class="left">
-        <h3><Icon name="mdi:currency-usd" /> Fully free and open source, forever </h3>
-        <p class="showcase-p">
-          <!-- Now before you complain about the whackass way some of the tags are formatted, don't blame me, blame prettier -->
-          At Eludris&#8482; we really like our software FOSS <strike
-            >well, most of us anyway</strike
-          >, which is why Eludris is and forever will be free, open source and under
-          the permissive MIT license.
-        </p>
+        <div class="showcase-icon">
+          <Icon name="mdi:currency-usd" />
+        </div>
+        <div class="showcase-content">
+          <h3>Fully free and open source, forever </h3>
+          <p>
+            <!-- Now before you complain about the whackass way some of the tags are formatted, don't blame me, blame prettier -->
+            At Eludris&#8482; we really like our software FOSS <strike
+              >well, most of us anyway</strike
+            >, which is why Eludris is and forever will be free, open source and under
+            the permissive MIT license.
+          </p>
+        </div>
       </div>
       <div class="right">
-        <h3><Icon name="mdi:feather" /> Lightweight and federated</h3>
-        <p class="showcase-p">
-          Eludris is federated by nature, which means that anyone can host their
-          own instance anywhere and it will communicate with the other instances
-          that it cares about to fetch you your latest memes no matter your
-          instance, all while being fully contained thanks to docker.
-        </p>
+        <div class="showcase-icon">
+          <Icon name="mdi:feather" />
+        </div>
+        <div class="showcase-content">
+          <h3> Lightweight and federated</h3>
+          <p>
+            Eludris is federated by nature, which means that anyone can host their
+            own instance anywhere and it will communicate with the other instances
+            that it cares about to fetch you your latest memes no matter your
+            instance, all while being fully contained thanks to docker.
+          </p>
+        </div>
       </div>
       <div class="left">
-        <h3><Icon name="mdi:lock" /> Secure</h3>
-        <p class="showcase-p">
-          Eludris really cares about your privacy, which is why it provides federation
-          <em>and</em> End-To-End-Encryption so your mind can be at peace no
-          matter which shady instance you're using!<br /><br />p.s. Do not use
-          shady instances.
-        </p>
+        <div class="showcase-icon">
+          <Icon name="mdi:lock" /> 
+        </div>
+        <div class="showcase-content">
+          <h3>Secure</h3>
+          <p>
+            Eludris really cares about your privacy, which is why it provides federation
+            <em>and</em> End-To-End-Encryption so your mind can be at peace no
+            matter which shady instance you're using!<br /><br />p.s. Do not use
+            shady instances.
+          </p>
+        </div>
       </div>
       <div class="right">
-        <h3>
-          <Icon name="mdi:shimmer" /> A platform that's <em
-            >truly <b>yours</b>
-          </em>
-        </h3>
-        <p class="showcase-p">
-          Eludris strives to be as configurable as it can, which is why not only
-          can you configure everything about your instance from a single <code
-            >Eludris.toml</code
-          >
-          <strike>and <code>.env</code></strike>, but it also actively encourages
-          you to make your own clients, bots, API wrappers and so on.
-        </p>
+        <div class="showcase-icon">
+          <Icon name="mdi:shimmer" />
+        </div>
+        <div class="showcase-content">
+          <h3>A platform that's <em>truly <b>yours</b></em></h3>
+          <p>
+            Eludris strives to be as configurable as it can, which is why not only
+            can you configure everything about your instance from a single <code
+              >Eludris.toml</code
+            >
+            <strike>and <code>.env</code></strike>, but it also actively encourages
+            you to make your own clients, bots, API wrappers and so on.
+          </p>
+        </div>
       </div>
     </div>
   </main>
@@ -91,6 +107,7 @@ import { Icon } from "astro-icon";
   #logo-text {
     text-align: center;
     margin: 20px 0;
+    line-height: 75px;
   }
 
   #learn-more-wrapper {
@@ -159,39 +176,41 @@ import { Icon } from "astro-icon";
     padding: 25px 20vw;
   }
 
-  #showcase > div > h3  {
+  .showcase-icon {
     width: 50%;
     display: flex;
-    flex-direction: column;
-    gap: 20px;
     align-items: center;
     justify-content: center;
   }
 
-  #showcase > div.left > h3 {
+  div.right > .showcase-icon {
     order: 1;
   }
 
-  #showcase > div > h3 > [astro-icon] {
-    width: 2em;
-    height: 2em;
+  .showcase-icon > [astro-icon] {
+    width: 200px;
+    height: 200px;
     position: relative;
-    top: 0.55em;
     color: var(--pink-600);
   }
 
-  .showcase-p {
+  .showcase-content {
     width: 50%;
     margin: auto 0;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+
+  .showcase-content h3 {
+    padding: 0;
+    margin: 0;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 40px;
   }
 
   code {
     background-color: #222;
-  }
-
-  h3 {
-    padding: 0;
-    margin: 0;
   }
 
   @media only screen and (max-width: 1200px) {
