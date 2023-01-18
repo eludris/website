@@ -16,7 +16,12 @@ import { Icon } from "astro-icon";
         > decide what goes.
       </p>
       <div id="learn-more-wrapper">
-        <a id="learn-more-button" href="https://eludris.github.io/docs"
+        <a class="learn-more-button" href="https://elu.pages.dev"
+          ><button>
+            Try it out
+          </button>
+        </a>
+        <a class="learn-more-button" href="https://eludris.github.io/docs" target="_blank"
           ><button>
             Learn more <Icon name="eva:external-link-fill" />
           </button>
@@ -125,14 +130,19 @@ import { Icon } from "astro-icon";
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 15px;
   }
 
-  #learn-more-button {
+  .learn-more-button {
     text-decoration: none;
     border: unset;
   }
 
-  #learn-more-button > button {
+  .learn-more-button:hover {
+    border-width: 0;
+  }
+
+  .learn-more-button > button {
     display: flex;
     flex-direction: row;
     gap: 10px;
@@ -144,23 +154,20 @@ import { Icon } from "astro-icon";
     color: var(--purple-100);
     box-shadow: 0 2px 4px var(--purple-100);
     transition: box-shadow ease-in-out 200ms, color ease-in-out 200ms,
-      background-color ease-in-out 200ms, margin ease-in-out 200ms;
-    margin-top: 42px;
-    width: 200px;
+      background-color ease-in-out 200ms;
+    margin-top: 2px;
+    width: auto;
     text-align: center;
     justify-content: space-between;
-    margin-bottom: 0;
     cursor: pointer;
   }
 
-  #learn-more-button > button:hover {
+  .learn-more-button > button:hover {
     box-shadow: 0 5px 20px var(--purple-100);
     background-color: var(--pink-600);
-    margin-top: 40px;
-    margin-bottom: 2px;
   }
 
-  #learn-more-button > button > [astro-icon] {
+  .learn-more-button > button > [astro-icon] {
     width: 25px;
   }
 
