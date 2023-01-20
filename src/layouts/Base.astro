@@ -142,7 +142,7 @@ const stars = fetch("https://api.github.com/repos/Eludris/elusite")
         margin: 0;
         width: 100px;
         text-align: center;
-        padding-top: 25px;
+        padding-top: 15px;
         transition: border-width ease-in-out 100ms, color ease-in-out 200ms;
         color: var(--pink-500);
         border-width: 0px;
@@ -162,8 +162,8 @@ const stars = fetch("https://api.github.com/repos/Eludris/elusite")
 
       #nav-logo > img {
         border-radius: 10px;
-        width: 2.5rem;
-        height: 2.5rem;
+        width: 2.7rem;
+        height: 2.7rem;
         position: relative;
         top: 0.25rem;
         cursor: pointer;
@@ -227,6 +227,10 @@ const stars = fetch("https://api.github.com/repos/Eludris/elusite")
 
       :global(h3, h4, h5, h6) {
         color: var(--color-text-100);
+      }
+
+      :global(p) {
+        line-height: 32px;
       }
 
       :global(a) {
