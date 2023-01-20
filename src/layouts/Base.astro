@@ -114,20 +114,18 @@ const stars = fetch("https://api.github.com/repos/Eludris/elusite")
         --gray-500: hsl(249, 48%, 64%);
         --gray-600: hsl(249, 81%, 85%);
 
-        --color-text: hsl(0, 0%, 93%); /* actually #eeeeee in disguise */
+        --color-text-100: hsl(0, 0%, 93%); /* actually #eeeeee in disguise */
+        --color-text-200: hsl(0, 0%, 73%);
         --color-code-bg: hsl(260, 32%, 18%);
         --color-bg: var(--gray-100);
         --color-border: var(--purple-300);
       }
 
-      html {
+      body {
         font-family: system-ui, sans-serif;
-        color: var(--color-text);
+        color: var(--color-text-200);
         background-color: var(--color-bg);
         font-size: calc(var(--font-size-base) + 1px);
-      }
-
-      body {
         margin: 0;
       }
 
@@ -219,10 +217,16 @@ const stars = fetch("https://api.github.com/repos/Eludris/elusite")
 
       :global(h1) {
         font-size: var(--font-size-xl);
+        color: var(--color-text-100);
       }
 
       :global(h2) {
         font-size: var(--font-size-lg);
+        color: var(--color-text-100);
+      }
+
+      :global(h3, h4, h5, h6) {
+        color: var(--color-text-100);
       }
 
       :global(a) {
