@@ -10,7 +10,6 @@ Use keywords from https://docs.github.com/en/get-started/writing-on-github/worki
 
 <!--
 ## This is a **Content Change**
-- [ ] Changes have been tested.
 -->
 
 <!--
