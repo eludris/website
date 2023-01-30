@@ -94,11 +94,6 @@ const {
     margin-left: 10px;
   }
 
-  :global(pre) {
-    background-color: var(--color-code-bg);
-    font-size: 16px;
-  }
-
   :global(.header-href) {
     display: inline;
     color: inherit;
@@ -127,4 +122,22 @@ const {
   :global(article > p) {
     margin-left: 10px;
   }
+
+  :global(article pre, pre[class*='language-'][class*='language-']) {
+    width: calc(100% - 90px);
+    background-color: var(--gray-200);
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+  }
+
+  :global(article code, code[class*='language-'][class*='language-']) {
+    width: 100%;
+    background-color: var(--gray-200);
+    font-size: 18px;
+  }
+
+  :global(article pre code, pre code[class*='language-'][class*='language-']) {
+    background-color: transparent;
+  } 
 </style>

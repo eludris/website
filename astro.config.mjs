@@ -12,4 +12,7 @@ export default defineConfig({
       external: ["svgo"],
     },
   },
+  markdown: {
+    syntaxHighlight: 'prism',
+  }
 });
