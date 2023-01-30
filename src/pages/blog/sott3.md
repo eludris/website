@@ -136,7 +136,7 @@ bot.connect();
 Finally, [uwuki](https://github.com/enokiun/uwuki) got the actual wrapper parts of it surgically removed and transplanted over
 to [eludrs](https://github.com/eludris-community/eludrs), here's an example of what it looks like now:
 
-```rs
+```rust
 use eludrs::HttpClient;
 use futures::stream::StreamExt;
 
