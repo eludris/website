@@ -21,7 +21,8 @@ Howdy there everyone, it is but I, your not-so-favourite blogger EnokiUN with an
 State Of The Thing entry. This time we'll be discussing the latest and greatest
 updates and changes that have befallen the wonderful world of Buaris
 <span style="display: inline-block; width: 40px;"></span> UN over the past 2 months!
-(To understand the jokes you'll really have to join our Discord server, do it now.)
+(To understand the jokes you'll really have to join our [Discord server](https://www.youtube.com/@eludris),
+do it now.)
 
 ## Eludris
 
@@ -58,10 +59,11 @@ bleeding edge and blazingly fast (kind of) Eludris bot made by
 
 ### API Wrappers
 
-This SOTT we got 2 new API wrappers. The first one being in a personal favourite of mine, [crystal](https://crystal-lang.org/)!
-It's a Crystal API wrapper for Eludris called [Crudris](https://github.com/eludris-community/crudris) by @toolifelesstocode.
+This SOTT we got 2 new API wrappers. The first one being in a personal favourite language of mine,
+[crystal](https://crystal-lang.org/)!
+[Crudris](https://github.com/eludris-community/crudris) is a Crystal API wrapper for Eludris by @toolifelesstocode.
 
-We also got a [V](https://vlang.io/) api wrapper called [eludris.v](https://github.com/eludris-community/eludris.v)
+We also got a [V](https://vlang.io/) API wrapper called [eludris.v](https://github.com/eludris-community/eludris.v)
 made by @RGBCube, here's a taste of that:
 
 ```v
