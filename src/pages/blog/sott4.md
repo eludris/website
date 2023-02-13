@@ -21,7 +21,7 @@ Howdy there everyone, it is but I, your not-so-favourite blogger EnokiUN with an
 State Of The Thing entry. This time we'll be discussing the latest and greatest
 updates and changes that have befallen the wonderful world of Buaris
 <span style="display: inline-block; width: 40px;"></span> UN over the past 2 months!
-(To understand the jokes you'll really have to join our [Discord server](https://www.youtube.com/@eludris),
+(To understand the jokes you'll really have to join our [Discord server](https://discord.gg/vV6v2DhWQB),
 do it now.)
 
 ## Eludris
