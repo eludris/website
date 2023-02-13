@@ -24,28 +24,30 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
     <div id="posts">
       {
         posts.map(
-          (post, i) =>
+          (post) =>
             !post.frontmatter.hide && (
-              <div class={i % 3 === 1 ? "post centre" : "post"}>
-                <h2>
-                  <time
-                    datetime={post.frontmatter.pubDate}
-                    style="color: #aaaaaa;"
-                  >
-                    {new Date(post.frontmatter.pubDate).toLocaleDateString(
-                      "en-uk",
-                      {
-                        year: "numeric",
-                        month: "short",
-                        day: "numeric",
-                      }
-                    )}{" "}
-                  </time>{" "}
-                  - <a href={post.url}>{post.frontmatter.title}</a>
-                </h2>
-                <br />
-                <p class="post-description">{post.frontmatter.description}</p>
-              </div>
+              <a href={post.url} class="post-anchor">
+                <div class="post">
+                  <h2>
+                    <time
+                      datetime={post.frontmatter.pubDate}
+                      style="color: #aaaaaa;"
+                    >
+                      {new Date(post.frontmatter.pubDate).toLocaleDateString(
+                        "en-uk",
+                        {
+                          year: "numeric",
+                          month: "short",
+                          day: "numeric",
+                        }
+                      )}{" "}
+                    </time>{" "}
+                    - {post.frontmatter.title}
+                  </h2>
+                  <br />
+                  <p class="post-description">{post.frontmatter.description}</p>
+                </div>
+              </a>
             )
         )
       }
@@ -58,7 +60,7 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
     margin: 0 auto;
     padding: 1em;
     max-width: 90vw;
-    min-height: 100vh;
+    min-height: 90vh;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -88,19 +90,32 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
     justify-content: center;
   }
 
+  .post-anchor {
+    margin: 10px;
+    border: unset;
+  }
+
+  .post-anchor:hover {
+    border: unset;
+  }
+
   .post {
     padding: 1em;
+    border-radius: 10px;
+    background-color: var(--purple-100);
+    box-shadow: 2px 2px 4px var(--purple-100);
+    transition: box-shadow ease-in-out 250ms, background-color ease-in-out 250ms;
+  }
+
+  .post:hover {
+    background-color: var(--gray-200);
+    box-shadow: 2px 4px 8px var(--purple-200);
   }
 
   .post > h2 {
     font-size: 24px;
     font-weight: bold;
     margin: 5px 0;
-  }
-
-  .centre {
-    border-left: 1px solid #aaaaaa;
-    border-right: 1px solid #aaaaaa;
   }
 
   .post-description {
