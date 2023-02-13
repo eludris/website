@@ -49,7 +49,7 @@ const {
       <slot />
     </article>
     <script>
-      const tags = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+      const tags = ['h2', 'h3', 'h4', 'h5', 'h6'];
       const article = document.getElementsByTagName('article')[0];
       for (let i = 0; i < tags.length; i++) {
         let nodes = article.getElementsByTagName(tags[i]);
@@ -145,5 +145,9 @@ const {
 
   :global(article pre code, pre code[class*='language-'][class*='language-']) {
     background-color: transparent;
-  } 
+  }
+
+  :global(article *) {
+    word-wrap: break-word;
+  }
 </style>
