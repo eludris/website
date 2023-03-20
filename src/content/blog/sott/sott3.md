@@ -8,13 +8,6 @@ hide: false
 
 ## Main Things
 
-- [Greeting](#greeting)
-- [Eludris](#eludris)
-  - [Eludris Development](#eludris-development)
-  - [Eludris Community](#eludris-community)
-  - [API Wrappers](#api-wrappers)
-- [Conclusion](#conclusion)
-
 ## Greeting
 
 Well hello there my friends, first let me start with mentioning how - and as you've probably noticed (if you aren't blind or

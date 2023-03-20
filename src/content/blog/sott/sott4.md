@@ -8,12 +8,6 @@ hide: false
 
 ## Main Things
 
-- [Greetings](#greetings)
-- [Eludris](#eludris)
-  - [Bots](#bots)
-  - [API Wrappers](#api-wrappers)
-- [Conclusion](#conclusion)
-
 ## Greetings
 
 Howdy there everyone, it is but I, your not-so-favourite blogger EnokiUN with another

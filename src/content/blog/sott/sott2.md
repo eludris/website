@@ -8,15 +8,7 @@ hide: false
 
 ## Main Things
 
-- [Eludris](#eludris)
-  - [Instances](#instances)
-  - [Clients](#clients)
-  - [API Wrappers](#api-wrappers)
-  - [Bots](#bots)
-  - [Eludris Development](#eludris-development)
-- [Conclusion](#conclusion)
-
-### Welcome Back
+## Welcome Back
 
 So, if you are the keen type you might have perhaps noticed how there is a
 missing SOTT for last month, and you'd be correct, I totally didn't
@@ -28,15 +20,15 @@ And yes, this release of SOTT will cover the events that occurred over the last
 two months, so strap your belts because this one is going to hopefully be a
 good one.
 
-### Eludris
+## Eludris
 
-#### Instances
+### Instances
 
 First off, our friend @teaishealthy has started hosting their own Eludris
 instance over at <https://eludris.teaishealthy.me> so do consider checking that
 instance out.
 
-#### Clients
+### Clients
 
 In the realm of Eludris clients there have been also some developments, besides
 [Pilfer](https://github.com/eludris/pilfer) (our beloved official TUI) getting
@@ -54,7 +46,7 @@ written is [eluder](https://github.com/sawshadev/eluder) by @sawshadev, it's
 also a TUI much like Pilfer but it's written in python, give it a try, who knows,
 you might like it.
 
-#### API Wrappers
+### API Wrappers
 
 Next up we have the Eludris API wrappers, python wise we still have only two,
 [eludris.py](https://github.com/teaishealthy/eludris.py) also by @teaishealthy
@@ -91,7 +83,7 @@ in just a bit, currently the repository houses the library as a lib and the bot
 as a binary so you can add it by running <span class="code">`cargo add --git https://github.com/enokiun/uwuki`</span>
 in your rust project and it will _just work!!!1!!_.
 
-#### Bots
+### Bots
 
 The last two months included _a lot_ of action in the bot side of Eludris, we got
 bots such as Thang, [Erik](https://github.com/teaishealthy/erik), [Uwuki](https://github.com/enokiun/uwuki),
@@ -113,7 +105,7 @@ a more detailed rundown of them one at a time:
   In the first 30 minutes of this bot's lifetime it went from
   simple ping-pong bot to shitposting but on dubious amounts of steroids.
 
-#### Eludris Development
+### Eludris Development
 
 Now for the technical part, over the past two months not much has happened sadly
 since all the Eludritians were busy, that does not mean that Eludris didn't have
@@ -137,7 +129,7 @@ any work done on it, here are some of the main highlights:
 
 Hopefully we will have a longer list next month, **_hopefully_**.
 
-### Conclusion
+## Conclusion
 
 Welp, that was a fairly fun ~~two~~ month~~s~~, it was very Eludris focused and
 nothing really happened on the Cognite side, that might change next month however,

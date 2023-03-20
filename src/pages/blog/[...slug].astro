@@ -8,7 +8,10 @@ export const getStaticPaths = async () => {
 };
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+const {
+  Content,
+  remarkPluginFrontmatter: { minutesRead, words }
+} = await entry.render();
 ---
 
 <Base title={`Eludris Blog | ${entry.data.title}`} description={entry.data.description}>
@@ -39,6 +42,8 @@ const { Content } = await entry.render();
             </div>
           )
         }
+        <span>|</span>
+        {minutesRead} - {words} words
       </div>
       <Content />
     </article>
@@ -75,29 +80,31 @@ const { Content } = await entry.render();
     margin-left: 10px;
   }
 
-  :global(.header-href) {
-    display: inline-block;
-    padding-top: 20px;
-    color: inherit;
-    border-width: 2px;
-    border-color: transparent;
-    transition: border-color ease-in-out 75ms;
+  :global(.header) {
+    display: block;
+    position: relative;
   }
 
-  :global(.header-href:hover) {
-    color: inherit;
-    border-color: var(--gray-300);
-  }
-
-  :global(.header-symbol) {
-    margin-left: 10px;
-    font-size: 15px;
-    color: var(--gray-500);
+  :global(.header > a) {
+    display: inline;
+    position: absolute;
+    left: -25px;
+    top: 1em;
     opacity: 0;
+    border: unset;
+    border: unset;
     transition: opacity ease-in-out 75ms;
   }
 
-  :global(.header-href:hover > .header-symbol) {
+  :global(.link-icon) {
+    color: inherit;
+  }
+
+  :global(.link-icon:hover) {
+    color: var(--gray-300);
+  }
+
+  :global(.header:hover > a) {
     opacity: 1;
   }
 
@@ -129,5 +136,11 @@ const { Content } = await entry.render();
 
   :global(article *) {
     word-wrap: break-word;
+  }
+
+  :global(article blockquote) {
+    border-left: 5px solid var(--gray-400);
+    padding-left: 25px;
+    margin-left: 5px;
   }
 </style>

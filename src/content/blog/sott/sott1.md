@@ -8,11 +8,6 @@ hide: false
 
 ## Main Things
 
-- [Introduction To SOTT](#introduction-to-sott)
-- [Eludris](#eludris)
-- [Cognite](#cognite)
-- [Other Things](#other-things)
-
 ## Introduction To SOTT
 
 Now, you may be asking yourself something along the lines of "What the heck is
