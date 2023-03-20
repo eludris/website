@@ -1,2 +1,2 @@
-/gh/ https://github.com/eludris
+/gh https://github.com/eludris
 /gh/* https://github.com/eludris/:splat
