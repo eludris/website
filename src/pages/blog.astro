@@ -1,23 +1,18 @@
 ---
-import Base from "../layouts/Base.astro";
+import Base from '../layouts/Base.astro';
 
-const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
-  (a, b) =>
-    new Date(b.frontmatter.pubDate).valueOf() -
-    new Date(a.frontmatter.pubDate).valueOf()
+const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
+  (a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
 );
 ---
 
-<Base
-  title="Eludris | Blog Index"
-  description="An index of all the Eludris blog posts."
->
+<Base title="Eludris | Blog Index" description="An index of all the Eludris blog posts.">
   <main>
     <div id="head">
       <h1>The Eludris Blog Index</h1>
       <p>
-        A place where you can find all our blogs be it development updates or
-        just plain shitposting.
+        A place where you can find all our blogs be it development updates or just plain
+        shitposting.
       </p>
     </div>
     <hr id="sep" />
@@ -29,19 +24,13 @@ const posts = (await Astro.glob("./blog/*.{md,mdx}")).sort(
               <a href={post.url} class="post-anchor">
                 <div class="post">
                   <h2>
-                    <time
-                      datetime={post.frontmatter.pubDate}
-                      style="color: #aaaaaa;"
-                    >
-                      {new Date(post.frontmatter.pubDate).toLocaleDateString(
-                        "en-uk",
-                        {
-                          year: "numeric",
-                          month: "short",
-                          day: "numeric",
-                        }
-                      )}{" "}
-                    </time>{" "}
+                    <time datetime={post.frontmatter.pubDate} style="color: #aaaaaa;">
+                      {new Date(post.frontmatter.pubDate).toLocaleDateString('en-uk', {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric'
+                      })}{' '}
+                    </time>{' '}
                     - {post.frontmatter.title}
                   </h2>
                   <br />

@@ -1,6 +1,6 @@
 ---
-import { SITE_TITLE, SITE_DESCRIPTION, EMBED_COLOUR } from "../config.js";
-import { Icon } from "astro-icon";
+import { SITE_TITLE, SITE_DESCRIPTION, EMBED_COLOUR } from '../config.js';
+import { Icon } from 'astro-icon';
 
 export interface Props {
   title?: string;
@@ -13,10 +13,10 @@ const today = new Date();
 const {
   title = SITE_TITLE,
   description = SITE_DESCRIPTION,
-  embed_colour = EMBED_COLOUR,
+  embed_colour = EMBED_COLOUR
 } = Astro.props as Props;
 
-const stars = fetch("https://api.github.com/repos/Eludris/elusite")
+const stars = fetch('https://api.github.com/repos/Eludris/elusite')
   .then((res) => res.json())
   .then((res) => res.stargazers_count);
 ---
@@ -54,24 +54,18 @@ const stars = fetch("https://api.github.com/repos/Eludris/elusite")
       </a>
 
       <a href="/blog" class="nav-link"><span>Blog</span></a>
-      <a href="https://eludris.github.io/docs" class="nav-link"
-        ><span>Docs</span>
-      </a>
-      <a href="https://github.com/eludris" class="nav-link"
-        ><span>GitHub</span>
-      </a>
+      <a href="https://eludris.github.io/docs" class="nav-link"><span>Docs</span></a>
+      <a href="https://github.com/eludris" class="nav-link"><span>GitHub</span></a>
     </nav>
     <div id="content">
       <slot />
     </div>
     <footer>
       <span
-        >&copy; {today.getFullYear()} Eludris. All rights reserved. <span
-          style="color: #777777">|</span
+        >&copy; {today.getFullYear()} Eludris. All rights reserved. <span style="color: #777777"
+          >|</span
         > This repository has <span style="color: #f5f52c">{stars} stars</span> on
-        <a id="footer-github" href="https://github.com/eludris/elusite"
-          >GitHub.</a
-        >
+        <a id="footer-github" href="https://github.com/eludris/elusite">GitHub.</a>
       </span>
       <div id="footer-links">
         <a href="https://github.com/eludris" target="_blank"
@@ -82,13 +76,9 @@ const stars = fetch("https://api.github.com/repos/Eludris/elusite")
           ><Icon name="logos:discord-icon" />
         </a>
         <span style="color: #777777">|</span>
-        <a href="https://reddit.com/r/eludris" target="_blank"
-          ><Icon name="logos:reddit-icon" />
-        </a>
+        <a href="https://reddit.com/r/eludris" target="_blank"><Icon name="logos:reddit-icon" /></a>
         <span style="color: #777777">|</span>
-        <a href="https://twitter.com/eludris" target="_blank"
-          ><Icon name="logos:twitter" />
-        </a>
+        <a href="https://twitter.com/eludris" target="_blank"><Icon name="logos:twitter" /></a>
       </div>
     </footer>
     <style>

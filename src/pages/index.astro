@@ -1,26 +1,18 @@
 ---
-import Base from "../layouts/Base.astro";
-import { Icon } from "astro-icon";
+import Base from '../layouts/Base.astro';
+import { Icon } from 'astro-icon';
 ---
 
 <Base>
   <main>
     <div id="first">
       <h1 id="logo-text">Your platform.<br />Your rules.</h1>
-      <h1 id="real-slogan" style="display: none">
-        Microwaving mice is wrong they say
-      </h1>
+      <h1 id="real-slogan" style="display: none">Microwaving mice is wrong they say</h1>
       <p class="desc">
-        A simple, End-To-End-Encrypted, FOSS and federated platform, where <em
-          >you</em
-        > decide what goes.
+        A simple, End-To-End-Encrypted, FOSS and federated platform, where <em>you</em> decide what goes.
       </p>
       <div id="learn-more-wrapper">
-        <a class="learn-more-button" href="https://elu.pages.dev"
-          ><button>
-            Try it out
-          </button>
-        </a>
+        <a class="learn-more-button" href="https://elu.pages.dev"><button> Try it out</button></a>
         <a class="learn-more-button" href="https://eludris.github.io/docs" target="_blank"
           ><button>
             Learn more <Icon name="eva:external-link-fill" />
@@ -33,64 +25,100 @@ import { Icon } from "astro-icon";
       <div class="left">
         <div class="showcase-icon">
           <!-- material-symbols:attach-money-rounded -->
-          <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="M12.025 21q-.425 0-.713-.288q-.287-.287-.287-.712v-1.15Q9.9 18.6 9.05 17.975q-.85-.625-1.375-1.75q-.175-.35-.013-.737q.163-.388.588-.563q.35-.15.725.013q.375.162.575.537q.425.75 1.075 1.138q.65.387 1.6.387q1.025 0 1.738-.462q.712-.463.712-1.438q0-.875-.55-1.388q-.55-.512-2.55-1.162q-2.15-.675-2.95-1.612q-.8-.938-.8-2.288q0-1.625 1.05-2.525q1.05-.9 2.15-1.025V4q0-.425.287-.713Q11.6 3 12.025 3t.713.287q.287.288.287.713v1.1q.95.15 1.65.613q.7.462 1.15 1.137q.225.325.088.725q-.138.4-.563.575q-.35.15-.725.012q-.375-.137-.7-.487q-.325-.35-.762-.538q-.438-.187-1.088-.187q-1.1 0-1.675.488q-.575.487-.575 1.212q0 .825.75 1.3q.75.475 2.6 1q1.725.5 2.613 1.587q.887 1.088.887 2.513q0 1.775-1.05 2.7q-1.05.925-2.6 1.15V20q0 .425-.287.712q-.288.288-.713.288Z"/></svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 24 24"
+            ><path
+              fill="currentColor"
+              d="M12.025 21q-.425 0-.713-.288q-.287-.287-.287-.712v-1.15Q9.9 18.6 9.05 17.975q-.85-.625-1.375-1.75q-.175-.35-.013-.737q.163-.388.588-.563q.35-.15.725.013q.375.162.575.537q.425.75 1.075 1.138q.65.387 1.6.387q1.025 0 1.738-.462q.712-.463.712-1.438q0-.875-.55-1.388q-.55-.512-2.55-1.162q-2.15-.675-2.95-1.612q-.8-.938-.8-2.288q0-1.625 1.05-2.525q1.05-.9 2.15-1.025V4q0-.425.287-.713Q11.6 3 12.025 3t.713.287q.287.288.287.713v1.1q.95.15 1.65.613q.7.462 1.15 1.137q.225.325.088.725q-.138.4-.563.575q-.35.15-.725.012q-.375-.137-.7-.487q-.325-.35-.762-.538q-.438-.187-1.088-.187q-1.1 0-1.675.488q-.575.487-.575 1.212q0 .825.75 1.3q.75.475 2.6 1q1.725.5 2.613 1.587q.887 1.088.887 2.513q0 1.775-1.05 2.7q-1.05.925-2.6 1.15V20q0 .425-.287.712q-.288.288-.713.288Z"
+            ></path>
+          </svg>
         </div>
         <div class="showcase-content">
           <h3>Fully free and open source, forever</h3>
           <p>
             <!-- Now before you complain about the whackass way some of the tags are formatted, don't blame me, blame prettier -->
-            Here at Eludris, we strive to make free and open source software for
-            everyone to use, which is why Eludris is and forever will be free, open
-            source and under the permissive MIT license.
+            Here at Eludris, we strive to make free and open source software for everyone to use, which
+            is why Eludris is and forever will be free, open source and under the permissive MIT license.
           </p>
         </div>
       </div>
       <div class="right">
         <div class="showcase-icon">
           <!-- material-symbols:nest-eco-leaf -->
-          <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="M20 4h-8Q8.65 4 6.325 6.325Q4 8.65 4 12q0 1.4.438 2.65q.437 1.25 1.237 2.275L4.3 18.3q-.275.275-.275.7q0 .425.275.7q.275.275.7.275q.425 0 .7-.275l1.4-1.375q1.025.8 2.263 1.237Q10.6 20 12 20q3.35 0 5.675-2.325Q20 15.35 20 12Zm-6.3 6.3q.3.3.3.712q0 .413-.3.713L9.775 15.65q-.3.3-.725.312q-.425.013-.7-.312q-.275-.3-.275-.712q0-.413.275-.688l3.95-3.95q.275-.275.7-.275q.425 0 .7.275Z"/></svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 24 24"
+            ><path
+              fill="currentColor"
+              d="M20 4h-8Q8.65 4 6.325 6.325Q4 8.65 4 12q0 1.4.438 2.65q.437 1.25 1.237 2.275L4.3 18.3q-.275.275-.275.7q0 .425.275.7q.275.275.7.275q.425 0 .7-.275l1.4-1.375q1.025.8 2.263 1.237Q10.6 20 12 20q3.35 0 5.675-2.325Q20 15.35 20 12Zm-6.3 6.3q.3.3.3.712q0 .413-.3.713L9.775 15.65q-.3.3-.725.312q-.425.013-.7-.312q-.275-.3-.275-.712q0-.413.275-.688l3.95-3.95q.275-.275.7-.275q.425 0 .7.275Z"
+            ></path>
+          </svg>
         </div>
         <div class="showcase-content">
           <h3>Lightweight and federated</h3>
           <p>
-            Eludris is federated, which means that anyone can host their own
-            instance anywhere and it will communicate with the other instances
-            to fetch you your latest and greatest hot memes and subjectively bad
-            opinion no matter where it is, all while being fully contained
-            thanks to docker.
+            Eludris is federated, which means that anyone can host their own instance anywhere and
+            it will communicate with the other instances to fetch you your latest and greatest hot
+            memes and subjectively bad opinion no matter where it is, all while being fully
+            contained thanks to docker.
           </p>
         </div>
       </div>
       <div class="left">
         <div class="showcase-icon">
           <!-- material-symbols:lock -->
-          <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="M6 22q-.825 0-1.412-.587Q4 20.825 4 20V10q0-.825.588-1.413Q5.175 8 6 8h1V6q0-2.075 1.463-3.538Q9.925 1 12 1t3.538 1.462Q17 3.925 17 6v2h1q.825 0 1.413.587Q20 9.175 20 10v10q0 .825-.587 1.413Q18.825 22 18 22Zm6-5q.825 0 1.413-.587Q14 15.825 14 15q0-.825-.587-1.413Q12.825 13 12 13q-.825 0-1.412.587Q10 14.175 10 15q0 .825.588 1.413Q11.175 17 12 17ZM9 8h6V6q0-1.25-.875-2.125T12 3q-1.25 0-2.125.875T9 6Z"/></svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 24 24"
+            ><path
+              fill="currentColor"
+              d="M6 22q-.825 0-1.412-.587Q4 20.825 4 20V10q0-.825.588-1.413Q5.175 8 6 8h1V6q0-2.075 1.463-3.538Q9.925 1 12 1t3.538 1.462Q17 3.925 17 6v2h1q.825 0 1.413.587Q20 9.175 20 10v10q0 .825-.587 1.413Q18.825 22 18 22Zm6-5q.825 0 1.413-.587Q14 15.825 14 15q0-.825-.587-1.413Q12.825 13 12 13q-.825 0-1.412.587Q10 14.175 10 15q0 .825.588 1.413Q11.175 17 12 17ZM9 8h6V6q0-1.25-.875-2.125T12 3q-1.25 0-2.125.875T9 6Z"
+            ></path>
+          </svg>
         </div>
         <div class="showcase-content">
           <h3>Secure</h3>
           <p>
-            Eludris really cares about your privacy, which is why it provides
-            federation and End-To-End-Encryption so your mind can be at peace no
-            matter how shady the instance you're using!
+            Eludris really cares about your privacy, which is why it provides federation and
+            End-To-End-Encryption so your mind can be at peace no matter how shady the instance
+            you're using!
             <br />
             <br />
-            Not convinced yet? Host your own instance and own all your data, sounds
-            good?
+            Not convinced yet? Host your own instance and own all your data, sounds good?
           </p>
         </div>
       </div>
       <div class="right">
         <div class="showcase-icon">
           <!-- material-symbols:brush -->
-          <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="M6 21q-1.125 0-2.225-.55T2 19q.65 0 1.325-.512Q4 17.975 4 17q0-1.25.875-2.125T7 14q1.25 0 2.125.875T10 17q0 1.65-1.175 2.825Q7.65 21 6 21Zm5.75-6L9 12.25l8.95-8.95q.275-.275.688-.288q.412-.012.712.288l1.35 1.35q.3.3.3.7q0 .4-.3.7Z"/></svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 24 24"
+            ><path
+              fill="currentColor"
+              d="M6 21q-1.125 0-2.225-.55T2 19q.65 0 1.325-.512Q4 17.975 4 17q0-1.25.875-2.125T7 14q1.25 0 2.125.875T10 17q0 1.65-1.175 2.825Q7.65 21 6 21Zm5.75-6L9 12.25l8.95-8.95q.275-.275.688-.288q.412-.012.712.288l1.35 1.35q.3.3.3.7q0 .4-.3.7Z"
+            ></path>
+          </svg>
         </div>
         <div class="showcase-content">
           <h3>Fully under your control</h3>
           <p>
-            Eludris strives to be as configurable as possible, which is why it
-            makes it easy to configure everything from max message lengths to
-            ratelimit settings from a single toml file without needing any
-            coding experience.
+            Eludris strives to be as configurable as possible, which is why it makes it easy to
+            configure everything from max message lengths to ratelimit settings from a single toml
+            file without needing any coding experience.
           </p>
         </div>
       </div>

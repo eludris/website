@@ -1,18 +1,18 @@
-import { defineConfig } from "astro/config";
-import mdx from "@astrojs/mdx";
+import { defineConfig } from 'astro/config';
+import mdx from '@astrojs/mdx';
 
-import sitemap from "@astrojs/sitemap";
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://elusite.pages.dev",
+  site: 'https://elusite.pages.dev',
   integrations: [mdx(), sitemap()],
   vite: {
     ssr: {
-      external: ["svgo"],
-    },
+      external: ['svgo']
+    }
   },
   markdown: {
-    syntaxHighlight: 'prism',
+    syntaxHighlight: 'prism'
   }
 });
