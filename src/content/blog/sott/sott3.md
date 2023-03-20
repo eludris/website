@@ -1,9 +1,8 @@
 ---
-layout: "../../layouts/BlogPost.astro"
-title: "State Of The Thing #3"
-description: "The third entry in the series of monthly Eludris news & updates."
-author: "EnokiUN"
-pubDate: "December 12 2022"
+title: 'State Of The Thing #3'
+description: 'The third entry in the series of monthly Eludris news & updates.'
+author: 'EnokiUN'
+pubDate: 'December 12 2022'
 hide: false
 ---
 
@@ -120,13 +119,13 @@ happy now >:D
 Here's a little example of that:
 
 ```ts
-import { Bot } from "evangeline";
+import { Bot } from 'evangeline';
 
-const bot = new Bot("new bot name");
+const bot = new Bot('new bot name');
 
-bot.on("messageCreate", async (msg) => {
-  if (msg.content == "!speed") {
-    await bot.send("Am I fast?");
+bot.on('messageCreate', async (msg) => {
+  if (msg.content == '!speed') {
+    await bot.send('Am I fast?');
   }
 });
 

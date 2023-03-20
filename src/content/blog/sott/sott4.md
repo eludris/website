@@ -1,9 +1,8 @@
 ---
-layout: "../../layouts/BlogPost.astro"
-title: "State Of The Thing #4"
-description: "The fourth entry in the series of not-so-monthly Eludris news & updates."
-author: "EnokiUN"
-pubDate: "February 13 2023"
+title: 'State Of The Thing #4'
+description: 'The fourth entry in the series of not-so-monthly Eludris news & updates.'
+author: 'EnokiUN'
+pubDate: 'February 13 2023'
 hide: false
 ---
 

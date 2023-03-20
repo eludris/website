@@ -1,63 +1,47 @@
 ---
-import Base from './Base.astro';
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
 
-export interface Props {
-  content: {
-    title: string;
-    description: string;
-    author: string;
-    pubDate?: string;
-    updatedDate?: string;
-    heroImage?: string;
-  };
-}
+export const getStaticPaths = async () => {
+  const entries = await getCollection('blog');
+  return entries.map((entry) => ({ params: { slug: entry.slug }, props: { entry } }));
+};
 
-const {
-  content: { title, description, author, pubDate, updatedDate, heroImage }
-} = Astro.props;
+const { entry } = Astro.props;
+const { Content } = await entry.render();
 ---
 
-<Base title={`Eludris Blog | ${title}`} description={description}>
+<Base title={`Eludris Blog | ${entry.data.title}`} description={entry.data.description}>
   <main>
     <article>
       <div id="head">
-        {heroImage && <img width={720} height={360} src={heroImage} alt="hero image" />}
-        <h1 class="title">{title}</h1>
-        <p>{description}</p>
-        {pubDate && author && <hr />}
         {
-          pubDate && (
+          entry.data.heroImage && (
+            <img width={720} height={360} src={entry.data.heroImage} alt="hero image" />
+          )
+        }
+        <h1 class="title">{entry.data.title}</h1>
+        <p>{entry.data.description}</p>
+        {entry.data.pubDate && entry.data.author && <hr />}
+        {
+          entry.data.pubDate && (
             <span>
-              Published on <time>{pubDate}</time>
+              Published on <time>{entry.data.pubDate}</time>
             </span>
           )
         }
-        {pubDate && author && <span>|</span>}
-        {author && <span>{`Authored by ${author}`}</span>}
+        {entry.data.pubDate && entry.data.author && <span>|</span>}
+        {entry.data.author && <span>{`Authored by ${entry.data.author}`}</span>}
         {
-          updatedDate && (
+          entry.data.updatedDate && (
             <div>
-              Last updated on <time>{updatedDate}</time>
+              Last updated on <time>{entry.data.updatedDate}</time>
             </div>
           )
         }
       </div>
-      <slot />
+      <Content />
     </article>
-    <script>
-      const tags = ['h2', 'h3', 'h4', 'h5', 'h6'];
-      const article = document.getElementsByTagName('article')[0];
-      for (let i = 0; i < tags.length; i++) {
-        let nodes = article.getElementsByTagName(tags[i]);
-        for (let j = 0; j < nodes.length; j++) {
-          let node = nodes[j];
-          node.innerHTML = `<a href="${node.id}" class="header-href">${
-            node.innerText
-          }<span class="header-symbol">${'#'.repeat(i + 1)}</span></a>`;
-          node.style.margin = 'unset';
-        }
-      }
-    </script>
   </main>
 </Base>
 

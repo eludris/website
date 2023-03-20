@@ -1,8 +1,9 @@
 ---
 import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
 
-const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
-  (a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
+const posts = (await getCollection('blog')).sort(
+  (a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf()
 );
 ---
 
@@ -20,21 +21,21 @@ const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
       {
         posts.map(
           (post) =>
-            !post.frontmatter.hide && (
-              <a href={post.url} class="post-anchor">
+            !post.data.hide && (
+              <a href={`/blog/${post.slug}`} class="post-anchor">
                 <div class="post">
                   <h2>
-                    <time datetime={post.frontmatter.pubDate} style="color: #aaaaaa;">
-                      {new Date(post.frontmatter.pubDate).toLocaleDateString('en-uk', {
+                    <time datetime={post.data.pubDate} style="color: #aaaaaa;">
+                      {new Date(post.data.pubDate).toLocaleDateString('en-uk', {
                         year: 'numeric',
                         month: 'short',
                         day: 'numeric'
                       })}{' '}
                     </time>{' '}
-                    - {post.frontmatter.title}
+                    - {post.data.title}
                   </h2>
                   <br />
-                  <p class="post-description">{post.frontmatter.description}</p>
+                  <p class="post-description">{post.data.description}</p>
                 </div>
               </a>
             )

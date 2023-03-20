@@ -1,9 +1,8 @@
 ---
-layout: "../../layouts/BlogPost.astro"
-title: "State Of The Thing #1"
-description: "The first entry in the series of monthly Eludris news & updates."
-author: "EnokiUN"
-pubDate: "August 31 2022"
+title: 'State Of The Thing #1'
+description: 'The first entry in the series of monthly Eludris news & updates.'
+author: 'EnokiUN'
+pubDate: 'August 31 2022'
 hide: false
 ---
 
