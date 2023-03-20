@@ -43,7 +43,7 @@ const stars = fetch("https://api.github.com/repos/Eludris/elusite")
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content="/das_ding.png" />
     <meta name="theme-color" content={embed_colour} />
-    <link rel="stylesheet" href="/lazerwave.css">
+    <link rel="stylesheet" href="/lazerwave.css" />
   </head>
   <body>
     <nav>
@@ -61,7 +61,9 @@ const stars = fetch("https://api.github.com/repos/Eludris/elusite")
         ><span>GitHub</span>
       </a>
     </nav>
-    <slot />
+    <div id="content">
+      <slot />
+    </div>
     <footer>
       <span
         >&copy; {today.getFullYear()} Eludris. All rights reserved. <span
@@ -93,7 +95,7 @@ const stars = fetch("https://api.github.com/repos/Eludris/elusite")
       :root {
         --font-size-xxl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
         --font-size-xl: clamp(2.2rem, 2.5vw + 1.6rem, 2.5rem);
-        --font-size-l: clamp(1.7rem, 1.8vw + 1.2rem, 2.0rem);
+        --font-size-l: clamp(1.7rem, 1.8vw + 1.2rem, 2rem);
         --font-size-m: clamp(1.2rem, 1.2vw + 0.8rem, 1.6rem);
         --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
 
@@ -175,6 +177,10 @@ const stars = fetch("https://api.github.com/repos/Eludris/elusite")
 
       #eludris-nav-link {
         margin-right: auto;
+      }
+
+      #content {
+        min-height: calc(100vh - 6em);
       }
 
       footer {
