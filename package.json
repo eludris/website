@@ -6,14 +6,15 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "astro": "astro"
+    "astro": "astro",
+    "format": "prettier --write --plugin-search-dir=. ."
   },
   "devDependencies": {
     "@astrojs/mdx": "^0.10.2",
     "@astrojs/rss": "^1.0.0",
     "@astrojs/sitemap": "^1.0.0",
     "astro": "^1.1.1",
-    "prettier": "^2.7.1",
+    "prettier": "^2.8.5",
     "prettier-plugin-astro": "^0.5.5"
   },
   "dependencies": {
