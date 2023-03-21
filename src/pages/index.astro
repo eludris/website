@@ -177,9 +177,6 @@ import { Icon } from 'astro-icon';
     border-radius: 25px;
     font-size: 20px;
     padding: 14px 20px;
-    background-color: var(--pink-500);
-    color: var(--purple-100);
-    box-shadow: 0 2px 4px var(--purple-100);
     transition: box-shadow ease-in-out 200ms, color ease-in-out 200ms,
       background-color ease-in-out 200ms;
     margin-top: 2px;
@@ -187,11 +184,20 @@ import { Icon } from 'astro-icon';
     text-align: center;
     justify-content: space-between;
     cursor: pointer;
+    background-color: var(--pink-500);
+    color: var(--purple-100);
   }
 
   .learn-more-button > button:hover {
-    box-shadow: 0 5px 20px var(--purple-100);
     background-color: var(--pink-600);
+  }
+
+  :where(:root.dark .learn-more-button > button:hover) {
+    box-shadow: 0 5px 20px var(--purple-100);
+  }
+
+  :where(:root:not(.dark) .learn-more-button > button:hover) {
+    box-shadow: 0 5px 20px var(--purple-400);
   }
 
   .learn-more-button > button > [astro-icon] {

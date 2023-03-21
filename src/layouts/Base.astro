@@ -1,4 +1,5 @@
 ---
+import Header from '../components/Header.astro';
 import { SITE_TITLE, SITE_DESCRIPTION, EMBED_COLOUR } from '../config.js';
 import { Icon } from 'astro-icon';
 
@@ -46,17 +47,7 @@ const stars = fetch('https://api.github.com/repos/Eludris/elusite')
     <link rel="stylesheet" href="/lazerwave.css" />
   </head>
   <body>
-    <nav>
-      <a href="/" id="nav-logo">
-        <img src="/das_ding.svg" alt="The Eludris logo" />
-      </a><a href="/" class="nav-link" id="eludris-nav-link">
-        <span>Eludris</span>
-      </a>
-
-      <a href="/blog" class="nav-link"><span>Blog</span></a>
-      <a href="https://eludris.github.io/docs" class="nav-link"><span>Docs</span></a>
-      <a href="https://github.com/eludris" class="nav-link"><span>GitHub</span></a>
-    </nav>
+    <Header />
     <div id="content">
       <slot />
     </div>
@@ -64,7 +55,7 @@ const stars = fetch('https://api.github.com/repos/Eludris/elusite')
       <span
         >&copy; {today.getFullYear()} Eludris. All rights reserved. <span style="color: #777777"
           >|</span
-        > This repository has <span style="color: #f5f52c">{stars} stars</span> on
+        > This repository has <span style="color: var(--gray-600)">{stars} stars</span> on
         <a id="footer-github" href="https://github.com/eludris/elusite">GitHub.</a>
       </span>
       <div id="footer-links">
@@ -89,6 +80,11 @@ const stars = fetch('https://api.github.com/repos/Eludris/elusite')
         --font-size-m: clamp(1.2rem, 1.2vw + 0.8rem, 1.6rem);
         --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
 
+        --color-bg: var(--gray-100);
+        --color-border: var(--purple-300);
+      }
+
+      :root.dark {
         --purple-100: hsl(257, 33%, 8%);
         --purple-200: hsl(257, 35%, 13%);
         --purple-300: hsl(257, 44%, 18%);
@@ -114,8 +110,33 @@ const stars = fetch('https://api.github.com/repos/Eludris/elusite')
         --color-text-100: hsl(0, 0%, 93%); /* actually #eeeeee in disguise */
         --color-text-200: hsl(0, 0%, 73%);
         --color-code-bg: hsl(260, 32%, 18%);
-        --color-bg: var(--gray-100);
-        --color-border: var(--purple-300);
+      }
+
+      :root:not(.dark) {
+        --purple-100: hsl(320, 89%, 92%);
+        --purple-200: hsl(320, 83%, 86%);
+        --purple-300: hsl(320, 78%, 80%);
+        --purple-400: hsl(320, 64%, 73%);
+        --purple-500: hsl(320, 55%, 64%);
+        --purple-600: hsl(320, 63%, 58%);
+
+        --pink-100: hsl(300, 100%, 80%);
+        --pink-200: hsl(300, 100%, 75%);
+        --pink-300: hsl(300, 63%, 68%);
+        --pink-400: hsl(300, 43%, 61%);
+        --pink-500: hsl(300, 32%, 54%);
+        --pink-600: hsl(300, 19%, 47%);
+        --pink-700: hsl(300, 13%, 40%);
+
+        --gray-100: hsl(340, 78%, 93%);
+        --gray-200: hsl(340, 60%, 84%);
+        --gray-300: hsl(340, 58%, 69%);
+        --gray-400: hsl(340, 50%, 60%);
+        --gray-500: hsl(340, 40%, 45%);
+        --gray-600: hsl(340, 39%, 40%);
+
+        --color-text-100: hsl(0, 0%, 3%);
+        --color-text-200: hsl(0, 0%, 20%);
       }
 
       body {
@@ -124,49 +145,6 @@ const stars = fetch('https://api.github.com/repos/Eludris/elusite')
         background-color: var(--color-bg);
         font-size: calc(var(--font-size-base) + 1px);
         margin: 0;
-      }
-
-      nav {
-        display: flex;
-        flex-direction: row;
-        padding: 0 12em 0 12rem;
-        align-items: stretch;
-        margin-bottom: 20px;
-        font-size: 18px;
-      }
-
-      .nav-link {
-        margin: 0;
-        width: 100px;
-        text-align: center;
-        padding-top: 15px;
-        transition: border-width ease-in-out 100ms, color ease-in-out 200ms;
-        color: var(--pink-500);
-        border-width: 0px;
-        border-color: var(--pink-400);
-      }
-
-      .nav-link:hover {
-        color: var(--color-text);
-        border-color: var(
-          --pink-400
-        ); /* why do I have to do this twice? and no, no !important, we don't want css styles getting full of themselves bow, do we? */
-      }
-
-      #nav-logo {
-        border-width: 0px;
-      }
-
-      #nav-logo > img {
-        width: 2.7rem;
-        height: 2.7rem;
-        position: relative;
-        top: 0.25rem;
-        cursor: pointer;
-      }
-
-      #eludris-nav-link {
-        margin-right: auto;
       }
 
       #content {
@@ -249,14 +227,29 @@ const stars = fetch('https://api.github.com/repos/Eludris/elusite')
 
       :global(a) {
         text-decoration: none;
-        color: var(--gray-500);
-        border-bottom: 2px solid var(--gray-300);
         transition: border-bottom ease-in-out 200ms, color ease-in-out 200ms;
       }
 
       :global(a:hover) {
-        color: var(--gray-400);
         border-bottom: 2px solid var(--purple-400);
+      }
+
+      :global(:where(:root:not(.dark) a)) {
+        color: var(--gray-400);
+        border-bottom: 2px solid var(--gray-300);
+      }
+
+      :global(:where(:root:not(.dark) a:hover)) {
+        color: var(--gray-500);
+      }
+
+      :global(:where(:root.dark a)) {
+        color: var(--gray-500);
+        border-bottom: 2px solid var(--gray-300);
+      }
+
+      :global(:where(:root.dark a:hover)) {
+        color: var(--gray-400);
       }
 
       @media only screen and (max-width: 1200px) {
@@ -266,10 +259,6 @@ const stars = fetch('https://api.github.com/repos/Eludris/elusite')
 
         #nav-logo {
           padding-top: 10px;
-        }
-
-        #eludris-nav-button {
-          margin: inherit;
         }
 
         footer {

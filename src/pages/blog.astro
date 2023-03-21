@@ -25,14 +25,14 @@ const posts = (await getCollection('blog')).sort(
               <a href={`/blog/${post.slug}`} class="post-anchor">
                 <div class="post">
                   <h2>
-                    <time datetime={post.data.pubDate} style="color: #aaaaaa;">
+                    <time datetime={post.data.pubDate} style="font-weight: 300;">
                       {new Date(post.data.pubDate).toLocaleDateString('en-uk', {
                         year: 'numeric',
                         month: 'short',
                         day: 'numeric'
                       })}{' '}
                     </time>{' '}
-                    - {post.data.title}
+                    <span style="font-weight: 300;">-</span> {post.data.title}
                   </h2>
                   <br />
                   <p class="post-description">{post.data.description}</p>
@@ -91,14 +91,27 @@ const posts = (await getCollection('blog')).sort(
   .post {
     padding: 1em;
     border-radius: 10px;
-    background-color: var(--purple-100);
-    box-shadow: 2px 2px 4px var(--purple-100);
     transition: box-shadow ease-in-out 250ms, background-color ease-in-out 250ms;
   }
 
-  .post:hover {
+  :where(:root.dark .post) {
+    background-color: var(--purple-100);
+    box-shadow: 2px 2px 4px var(--purple-100);
+  }
+
+  :where(:root.dark .post:hover) {
     background-color: var(--gray-200);
     box-shadow: 2px 4px 8px var(--purple-200);
+  }
+
+  :where(:root:not(.dark) .post) {
+    background-color: var(--purple-400);
+    box-shadow: 2px 2px 4px var(--purple-100);
+  }
+
+  :where(:root:not(.dark) .post:hover) {
+    background-color: var(--purple-500);
+    box-shadow: 2px 4px 8px var(--purple-500);
   }
 
   .post > h2 {
@@ -108,9 +121,8 @@ const posts = (await getCollection('blog')).sort(
   }
 
   .post-description {
-    color: #aaaaaa;
+    color: var(--color-text-200);
     text-align: center;
-    max-width: 80%;
     margin: 10px auto;
   }
 

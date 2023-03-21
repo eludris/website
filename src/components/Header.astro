@@ -1,0 +1,124 @@
+---
+import { Icon } from 'astro-icon';
+---
+
+<nav>
+  <a href="/" id="nav-logo">
+    <img src="/das_ding.svg" alt="The Eludris logo" />
+  </a>
+  <a href="/" class="nav-link" id="eludris-nav-link">
+    <span>Eludris</span>
+  </a>
+
+  <a href="/blog" class="nav-link"><span>Blog</span></a>
+  <a href="https://eludris.github.io/docs" class="nav-link"><span>Docs</span></a>
+  <a href="https://github.com/eludris" class="nav-link"><span>GitHub</span></a>
+  <button id="theme-button">
+    <Icon id="moon" width="24px" name="mdi:weather-night" />
+    <Icon id="sun" width="24px" name="mdi:white-balance-sunny" />
+  </button>
+</nav>
+
+<script is:inline>
+  let theme =
+    localStorage.getItem('theme') ??
+    (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : 'light');
+
+  if (theme == 'dark') {
+    document.documentElement.classList.add('dark');
+  }
+
+  document.getElementById('theme-button')?.addEventListener('click', () => {
+    if (document.documentElement.classList.contains('dark')) {
+      document.documentElement.classList.remove('dark');
+      theme = 'light';
+    } else {
+      document.documentElement.classList.add('dark');
+      theme = 'dark';
+    }
+    localStorage.setItem('theme', theme);
+  });
+</script>
+
+<style>
+  nav {
+    display: flex;
+    flex-direction: row;
+    padding: 0 12em 0 12rem;
+    align-items: stretch;
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+
+  .nav-link {
+    margin: 0;
+    width: 100px;
+    text-align: center;
+    padding-top: 15px;
+    transition: border-width ease-in-out 100ms, color ease-in-out 200ms;
+    color: var(--pink-500);
+    border-width: 0px;
+    border-color: var(--pink-400);
+  }
+
+  .nav-link:hover {
+    color: var(--color-text);
+    border-color: var(--pink-400);
+  }
+
+  #nav-logo {
+    border-width: 0px;
+  }
+
+  #nav-logo > img {
+    width: 2.7rem;
+    height: 2.7rem;
+    position: relative;
+    top: 0.25rem;
+    cursor: pointer;
+  }
+
+  #eludris-nav-link {
+    margin-right: auto;
+  }
+
+  #theme-button {
+    border: unset;
+    background-color: inherit;
+    font-size: inherit;
+    margin: 0;
+    transition: color ease-in-out 200ms;
+    position: relative;
+    color: var(--pink-500);
+    align-self: baseline;
+  }
+
+  #theme-button > [astro-icon] {
+    position: absolute;
+    top: 0.8em;
+  }
+
+  :where(:root.dark #moon) {
+    display: none;
+  }
+
+  :where(:root:not(.dark) #sun) {
+    display: none;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    nav {
+      padding: 0 5px 0 17px;
+    }
+
+    #nav-logo {
+      padding-top: 10px;
+    }
+
+    #eludris-nav-link {
+      display: none;
+    }
+  }
+</style>
