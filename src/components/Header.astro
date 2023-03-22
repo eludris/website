@@ -2,9 +2,13 @@
 import { Icon } from 'astro-icon';
 ---
 
-<nav>
+<button id="nav-open-button">
+  <Icon width="30px" name="mdi:menu" />
+</button>
+<nav id="nav">
   <a href="/" id="nav-logo">
     <img src="/das_ding.svg" alt="The Eludris logo" />
+    <span class="nav-link" id="menu-eludris-text">Eludris</span>
   </a>
   <a href="/" class="nav-link" id="eludris-nav-link">
     <span>Eludris</span>
@@ -14,11 +18,12 @@ import { Icon } from 'astro-icon';
   <a href="https://eludris.github.io/docs" class="nav-link"><span>Docs</span></a>
   <a href="https://github.com/eludris" class="nav-link"><span>GitHub</span></a>
   <div id="button-wrapper">
-    <Icon id="moon" width="24px" name="mdi:weather-night" />
-    <Icon id="sun" width="24px" name="mdi:white-balance-sunny" />
+    <Icon id="moon" width="24px" name="mdi:white-balance-sunny" />
+    <Icon id="sun" width="24px" name="mdi:weather-night" />
     <button id="theme-button"></button>
   </div>
 </nav>
+<div id="block"></div>
 
 <script is:inline>
   let theme =
@@ -42,6 +47,20 @@ import { Icon } from 'astro-icon';
     localStorage.setItem('theme', theme);
   });
 </script>
+<script>
+  const nav = document.getElementById('nav');
+  const block = document.getElementById('block');
+
+  document.getElementById('nav-open-button')?.addEventListener('click', () => {
+    nav!.style.left = '0';
+    block!.style.display = 'block';
+  });
+
+  block!.addEventListener('click', () => {
+    nav!.style.left = '-100%';
+    block!.style.display = 'none';
+  });
+</script>
 
 <style>
   nav {
@@ -62,6 +81,12 @@ import { Icon } from 'astro-icon';
     color: var(--pink-500);
     border-width: 0px;
     border-color: var(--pink-400);
+  }
+
+  #nav-open-button,
+  #block,
+  #menu-eludris-text {
+    display: none;
   }
 
   .nav-link:hover {
@@ -87,6 +112,9 @@ import { Icon } from 'astro-icon';
 
   #button-wrapper {
     position: relative;
+    width: 30px;
+    height: 30px;
+    margin-top: 0.8em;
     color: var(--pink-500);
     transition: color ease-in-out 200ms;
   }
@@ -98,13 +126,11 @@ import { Icon } from 'astro-icon';
     width: 24px;
     height: 24px;
     padding: 2px;
-    top: 0.8em;
     cursor: pointer;
   }
 
   #button-wrapper > [astro-icon] {
     position: absolute;
-    top: 0.8em;
     transition: transform ease-in-out 250ms, opacity ease-in-out 250ms;
   }
 
@@ -122,15 +148,81 @@ import { Icon } from 'astro-icon';
 
   @media only screen and (max-width: 1200px) {
     nav {
-      padding: 0 5px 0 17px;
+      display: flex;
+      position: fixed;
+      z-index: 2;
+      top: 0;
+      left: -100%;
+      padding: 0;
+      flex-direction: column;
+      background-color: var(--gray-200);
+      height: 100%;
+      width: 70%;
+      transition: left ease-in-out 250ms;
     }
 
-    #nav-logo {
-      padding-top: 10px;
+    #nav-logo > img {
+      width: 4rem;
+      height: 4rem;
+    }
+
+    #menu-eludris-text {
+      margin: 0;
+      margin-left: 10px;
+    }
+
+    #nav-logo,
+    .nav-link {
+      margin-left: 20px;
+      margin-bottom: 10px;
+      padding-top: 0;
+      width: fit-content;
     }
 
     #eludris-nav-link {
       display: none;
+    }
+
+    #menu-eludris-text {
+      display: inline;
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    #nav-open-button {
+      display: block;
+      width: 30px;
+      height: 30px;
+      border: unset;
+      margin: 5px;
+      background-color: inherit;
+      color: var(--pink-500);
+    }
+
+    #nav-logo {
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    #nav-open-button {
+      position: absolute;
+    }
+
+    #block {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 70%);
+    }
+
+    #button-wrapper {
+      margin-top: auto;
+      margin-left: 5px;
     }
   }
 </style>
