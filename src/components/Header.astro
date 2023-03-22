@@ -13,10 +13,11 @@ import { Icon } from 'astro-icon';
   <a href="/blog" class="nav-link"><span>Blog</span></a>
   <a href="https://eludris.github.io/docs" class="nav-link"><span>Docs</span></a>
   <a href="https://github.com/eludris" class="nav-link"><span>GitHub</span></a>
-  <button id="theme-button">
+  <div id="button-wrapper">
     <Icon id="moon" width="24px" name="mdi:weather-night" />
     <Icon id="sun" width="24px" name="mdi:white-balance-sunny" />
-  </button>
+    <button id="theme-button"></button>
+  </div>
 </nav>
 
 <script is:inline>
@@ -84,29 +85,39 @@ import { Icon } from 'astro-icon';
     margin-right: auto;
   }
 
-  #theme-button {
-    border: unset;
-    background-color: inherit;
-    font-size: inherit;
-    margin: 0;
-    transition: color ease-in-out 200ms;
+  #button-wrapper {
     position: relative;
     color: var(--pink-500);
-    align-self: baseline;
+    transition: color ease-in-out 200ms;
+  }
+
+  #theme-button {
+    position: absolute;
+    border: unset;
+    background-color: inherit;
+    width: 24px;
+    height: 24px;
+    padding: 2px;
+    top: 0.8em;
     cursor: pointer;
   }
 
-  #theme-button > [astro-icon] {
+  #button-wrapper > [astro-icon] {
     position: absolute;
     top: 0.8em;
+    transition: transform ease-in-out 250ms, opacity ease-in-out 250ms;
   }
 
   :where(:root.dark #moon) {
-    display: none;
+    transform: translate(0, 100%);
+    opacity: 0;
+    z-index: -1;
   }
 
   :where(:root:not(.dark) #sun) {
-    display: none;
+    transform: translate(0, 100%);
+    opacity: 0;
+    z-index: -1;
   }
 
   @media only screen and (max-width: 1200px) {
