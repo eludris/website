@@ -60,16 +60,20 @@ const stars = fetch('https://api.github.com/repos/Eludris/elusite')
       </span>
       <div id="footer-links">
         <a href="https://github.com/eludris" target="_blank"
-          ><Icon name="akar-icons:github-fill" color="black" />
+          ><Icon name="akar-icons:github-fill" />
         </a>
         <span style="color: #777777">|</span>
         <a href="https://discord.gg/vV6v2DhWQB" target="_blank"
-          ><Icon name="logos:discord-icon" />
+          ><Icon name="akar-icons:discord-fill" />
         </a>
         <span style="color: #777777">|</span>
-        <a href="https://reddit.com/r/eludris" target="_blank"><Icon name="logos:reddit-icon" /></a>
+        <a href="https://reddit.com/r/eludris" target="_blank"
+          ><Icon name="akar-icons:reddit-fill" />
+        </a>
         <span style="color: #777777">|</span>
-        <a href="https://twitter.com/eludris" target="_blank"><Icon name="logos:twitter" /></a>
+        <a href="https://twitter.com/eludris" target="_blank"
+          ><Icon name="akar-icons:twitter-fill" />
+        </a>
       </div>
     </footer>
     <style>
@@ -167,13 +171,27 @@ const stars = fetch('https://api.github.com/repos/Eludris/elusite')
       }
 
       #footer-github {
-        color: var(--pink-400);
-        border-color: var(--purple-300);
+        font-weight: normal;
         transition: border-bottom ease-in-out 200ms, color ease-in-out 200ms;
       }
 
-      #footer-github:hover {
+      :root.dark #footer-github {
+        color: var(--pink-400);
+        border-color: var(--purple-300);
+      }
+
+      :root.dark #footer-github:hover {
         color: var(--pink-600);
+        border-color: var(--purple-500);
+      }
+
+      :root:not(.dark) #footer-github {
+        color: var(--gray-500);
+        border-color: var(--purple-400);
+      }
+
+      :root:not(.dark) #footer-github:hover {
+        color: var(--gray-600);
         border-color: var(--purple-500);
       }
 
@@ -193,6 +211,10 @@ const stars = fetch('https://api.github.com/repos/Eludris/elusite')
         width: 2em;
         position: relative;
         top: 0.2em;
+      }
+
+      :root.dark #footer-links > a:hover {
+        color: var(--gray-600);
       }
 
       :global(h1, h2, h3, h4, h5, h6) {
