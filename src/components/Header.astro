@@ -18,8 +18,8 @@ import { Icon } from 'astro-icon';
   <a href="https://eludris.github.io/docs" class="nav-link"><span>Docs</span></a>
   <a href="https://github.com/eludris" class="nav-link"><span>GitHub</span></a>
   <div id="button-wrapper">
-    <Icon id="moon" width="24px" name="mdi:white-balance-sunny" />
-    <Icon id="sun" width="24px" name="mdi:weather-night" />
+    <Icon id="moon" class="notransition" width="24px" name="mdi:white-balance-sunny" />
+    <Icon id="sun" class="notransition" width="24px" name="mdi:weather-night" />
     <button id="theme-button"></button>
   </div>
 </nav>
@@ -60,6 +60,11 @@ import { Icon } from 'astro-icon';
     nav!.style.left = '-100%';
     block!.style.display = 'none';
   });
+
+  setTimeout(() => {
+    document.getElementById('moon')!.classList.remove('notransition');
+    document.getElementById('sun')!.classList.remove('notransition');
+  }, 0); // again, why the heck does this work???
 </script>
 
 <style>
@@ -144,6 +149,10 @@ import { Icon } from 'astro-icon';
     transform: translate(0, 100%);
     opacity: 0;
     z-index: -1;
+  }
+
+  .notransition {
+    transition: unset !important;
   }
 
   @media only screen and (max-width: 1200px) {
