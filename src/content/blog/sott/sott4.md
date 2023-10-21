@@ -24,7 +24,7 @@ and Eludris v0.3.2.
 
 We also made this pretty insignificant thing called Pengin. It's like this web client
 for Eludris which is way more advanced and user friendly than the others whilst being
-more customizable and having more features, [give it a try, no?](https://elu.pages.dev).
+more customizable and having more features, [give it a try, no?](https://app.eludris.com).
 And while you're at it (and since it's really easy to use), why don't you show it
 off to a friend or two? :D
 

@@ -11,7 +11,7 @@ import remarkReadingTime from './plugins/reading-time.mjs';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://elusite.pages.dev',
+  site: 'https://eludris.com',
   integrations: [mdx(), sitemap()],
   vite: {
     ssr: {
