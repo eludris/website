@@ -162,18 +162,19 @@ import { Icon } from 'astro-icon';
 
   #showcase > div {
     display: flex;
-    padding: 25px 20vw;
+    padding: 25px 0;
   }
 
   .showcase-icon {
     width: 50%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
   }
 
   div.right > .showcase-icon {
     order: 1;
+    justify-content: flex-start;
   }
 
   .showcase-icon > img {
@@ -185,8 +186,13 @@ import { Icon } from 'astro-icon';
   .showcase-content {
     width: 50%;
     margin: auto 0;
-    padding: 0 10px;
+    padding: 0;
+    padding-right: 20%;
     box-sizing: border-box;
+  }
+
+  div.right > .showcase-content {
+    padding-left: 20%;
   }
 
   .showcase-content h3 {
