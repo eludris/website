@@ -239,6 +239,12 @@ import { Icon } from 'astro-icon';
       width: 100%;
     }
 
+    /* I love specificity */
+    div.left .showcase-content,
+    div.right .showcase-content {
+      padding: 0;
+    }
+
     .showcase-content > h3 {
       text-align: center;
     }
@@ -247,8 +253,13 @@ import { Icon } from 'astro-icon';
       width: 85vw;
     }
 
+    .showcase-icon {
+      justify-content: center;
+    }
+
     div.right > .showcase-icon {
       order: 0;
+      justify-content: center;
     }
   }
 </style>
